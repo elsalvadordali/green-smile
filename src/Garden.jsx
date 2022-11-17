@@ -1,3 +1,4 @@
+
 // garden (parent) is a grid 5x6 displaying only a single month's garden. : check
 // should be responsive : check
 // grid would have boxes (soil) : check , needs sizing
@@ -41,3 +42,10 @@ const Garden = () => {
 };
 
 export default Garden;
+
+const Garden = () => {
+
+}
+
+export default Garden
+

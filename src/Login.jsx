@@ -17,7 +17,10 @@ const Login = () => {
             <label htmlFor='password'>Password</label>
             <input type='text' id='password' onChange={(e) => setPword(e.target.value)}/>
             <button type='submit'>Login</button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/selection
         </form>
     )
 }

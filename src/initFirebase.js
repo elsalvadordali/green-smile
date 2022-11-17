@@ -1,10 +1,15 @@
 
 import { initializeApp } from "firebase/app";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 =======
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 >>>>>>> ac27ae28b60dbc516d545bd57db4d09af6f3f73d
+=======
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+
+>>>>>>> refs/remotes/origin/selection
 
 
 //ERASE BEFORE DEPLOY
@@ -16,10 +21,15 @@ const firebaseConfig = {
     messagingSenderId: "998688888679",
     appId: "1:998688888679:web:8bac6d09e5bade1a5301c2"
 <<<<<<< HEAD
+<<<<<<< HEAD
 };
 =======
   };
 >>>>>>> ac27ae28b60dbc516d545bd57db4d09af6f3f73d
+=======
+};
+
+>>>>>>> refs/remotes/origin/selection
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app);
@@ -31,6 +41,7 @@ export async function loginUser(email, password) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function register(email, password) {
  //Elise 
 
@@ -39,4 +50,9 @@ export async function register(email, password) {
       let user = await createUserWithEmailAndPassword(auth, email, password)
       return user
 >>>>>>> ac27ae28b60dbc516d545bd57db4d09af6f3f73d
+=======
+export async function register(email, password) {
+      let user = await createUserWithEmailAndPassword(auth, email, password)
+      return user
+>>>>>>> refs/remotes/origin/selection
 }

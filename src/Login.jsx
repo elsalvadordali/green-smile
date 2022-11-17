@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { loginUser } from './initFirebase'
 
-const Register = () => {
+const Login = () => {
     const [email, setEmail] = useState('')
     const [pword, setPword] = useState('')
 
@@ -24,4 +24,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Login

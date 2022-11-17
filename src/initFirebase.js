@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 //ERASE BEFORE DEPLOY
@@ -22,6 +22,7 @@ export async function loginUser(email, password) {
       return user
 }
 
-function register(email, password) {
-
+export async function register(email, password) {
+      let user = await createUserWithEmailAndPassword(auth, email, password)
+      return user
 }

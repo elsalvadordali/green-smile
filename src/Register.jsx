@@ -16,13 +16,12 @@ const Register = () => {
     return ( 
         <form onSubmit={(e) => signUp(e)} className='auth'>
             <h2>Register</h2>
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email' className='email-label'>Email</label>
             <input type='text' id='email' onChange={(e) => setEmail(e.target.value)}/>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password' class='password-label'>Password</label>
             <input type='text' id='password' onChange={(e) => setPword(e.target.value)}/>
 
             <button type='submit'>Register</button>
-            Your email is: {email} {pword}
         </form>
     )
 }

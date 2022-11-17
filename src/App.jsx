@@ -10,7 +10,7 @@ import Register from './Register'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [page, setPage] = useState('login')
+  const [page, setPage] = useState('register')
 
   function goNextPage(page) {
     console.log(page)
@@ -26,7 +26,7 @@ function App() {
       {page === 'garden' && <Garden goNextPage={goNextPage} />} 
       {page === 'see' && <SeeEntry goNextPage={goNextPage} />}
 
-      <button onClick={() => goNextPage('register')}>Go next</button>
+      
 
     </div>
   )

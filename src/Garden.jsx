@@ -2,7 +2,8 @@
 // should be responsive : check
 // grid would have boxes (soil) : check , needs sizing
 // the boxes would be div class kids (soil): check
-// listening for a mouse event ⬆️ And the user will select where the plant will grow on the grid
+// listening for a mouse event ⬆️, get coordinates: check
+// the user will select where the plant will grow on the grid
 // We're going to record the date of the journal entry in the database, plant, and position in the grid
 
 import React from "react";

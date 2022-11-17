@@ -12,7 +12,21 @@ const array = Array(30).fill(null);
 
 const Garden = () => {
   function handleClick(e) {
-    console.log(e);
+    // get parent(garden)
+    const parentEl = e.target.parentNode;
+    const pCords = parentEl.getBoundingClientRect();
+    const parentTop = pCords.top;
+    const parentLeft = pCords.left;
+    const soil = e.target;
+    const soilCords = soil.getBoundingClientRect();
+    const soilTop = soilCords.top;
+    const soilLeft = soilCords.left;
+
+    // calculate mouse position
+    const mouseTop = soilTop - parentTop;
+    const mouseLeft = soilLeft - parentLeft;
+    const coordinates = { top: mouseTop, left: mouseLeft };
+    console.log(coordinates);
   }
   return (
     <div className="garden">

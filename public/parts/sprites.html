@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            width: 100%;
+            height: 99vh;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+
+        }
+        .corn-growing-1 {
+            background-image: url('https://our-farm-game.s3.us-west-1.amazonaws.com/Objects/Farming+Plants.png');
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            width: 16px;
+            height: 32px;
+            zoom: 500%;
+        }
+        .ax1 {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="corn-growing-1 ax1"></div>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,10 @@
+.auth {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 12;
+}
+
+h2 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}

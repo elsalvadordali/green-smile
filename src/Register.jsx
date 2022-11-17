@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { register } from './initFirebase'
+import './Forms.css'
+
 
 const Register = () => {
     const [email, setEmail] = useState('')
@@ -12,7 +14,8 @@ const Register = () => {
     }
 
     return ( 
-        <form onSubmit={(e) => signUp(e)}>
+        <form onSubmit={(e) => signUp(e)} className='auth'>
+            <h2>Register</h2>
             <label htmlFor='email'>Email</label>
             <input type='text' id='email' onChange={(e) => setEmail(e.target.value)}/>
             <label htmlFor='password'>Password</label>

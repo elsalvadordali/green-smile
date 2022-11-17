@@ -1,6 +1,6 @@
 import Plant from "./Plant"
 
-const SelectTree = () => {
+const SelectPlant = () => {
     const plants = ['corn', 'carrot', 'couliflower', 'plum', 'eggplant', 'tulip', 'cabbage', 'weird', 'pumpkin', 'radish', 'lotus', 'purple', 'star fruit', 'cucumber']
 
     return (
@@ -11,5 +11,5 @@ const SelectTree = () => {
     )
 }
 
-export default SelectTree
+export default SelectPlant
 

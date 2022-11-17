@@ -2,14 +2,16 @@ import { useState } from 'react'
 import { loginUser } from './initFirebase'
 import './Forms.css'
 
-const Login = ({goNextPage}) => {
+const Login = ({goNextPage, updateUserId}) => {
     const [email, setEmail] = useState('')
     const [pword, setPword] = useState('')
 
     async function authenticate(e) {
         e.preventDefault()
         const res = await loginUser(email, pword)
-        goNextPage(2) //skip register page
+        localStorage.setItem('userId', res.user.uid)
+        goNextPage('write') //skip register page
+        updateUserId(res.user.uid)
     }
 
     return ( 

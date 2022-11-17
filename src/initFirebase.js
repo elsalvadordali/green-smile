@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-
+import { doc, setDoc, getFirestore } from 'firebase/firestore'
 
 //ERASE BEFORE DEPLOY
 const firebaseConfig = {
@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app);
-
+const db = getFirestore()
 
 export async function loginUser(email, password) {
       let user = await signInWithEmailAndPassword(auth, email, password)
@@ -26,4 +26,9 @@ export async function loginUser(email, password) {
 export async function register(email, password) {
       let user = await createUserWithEmailAndPassword(auth, email, password)
       return user
+}
+
+export async function writeToFireStore(entry, userId) {
+      const reference = doc(db, 'table', userId)
+      await updateDoc(reference, entry)
 }

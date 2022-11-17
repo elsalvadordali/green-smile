@@ -3,14 +3,14 @@ import { register } from './initFirebase'
 import './Forms.css'
 
 
-const Register = () => {
+const Register = ({goNextPage}) => {
     const [email, setEmail] = useState('')
     const [pword, setPword] = useState('')
 
     async function signUp(e) {
         e.preventDefault()
         const res = await register(email, pword)
-        console.log(res)
+        goNextPage('writeEntry')
     }
 
     return ( 

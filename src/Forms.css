@@ -29,7 +29,7 @@ h2 {
 }
 input {
     border: 2px solid black;
-    background-color: transparent;
+    background-color: #fff;
     padding: .5rem 1rem;
     border-radius: .5rem;
     box-shadow: 2px 2px 0 #a3c9a8, 4px 6px 0 #000;

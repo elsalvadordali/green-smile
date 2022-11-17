@@ -11,7 +11,7 @@ const firebaseConfig = {
     storageBucket: "green-smile-5bee9.appspot.com",
     messagingSenderId: "998688888679",
     appId: "1:998688888679:web:8bac6d09e5bade1a5301c2"
-  };
+};
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app);
@@ -23,5 +23,6 @@ export async function loginUser(email, password) {
 }
 
 function register(email, password) {
+ //Elise 
 
 }

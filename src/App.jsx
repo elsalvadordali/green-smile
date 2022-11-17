@@ -2,13 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Login from './Login'
+import SelectTree from './SelectTree'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [page, setPage] = useState(0)
+
+  function updatePageNumber(num) {
+    setPage(num)
+  }
+
   return (
+    
     <div className="App">
-      <Login />
+      {page === 0 && <SelectTree updatePageNumber/>}
     </div>
   )
 }

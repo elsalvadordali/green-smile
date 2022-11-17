@@ -2,7 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Login from './Login'
+
 import SelectTree from './SelectTree'
+import Register from './Register'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,9 +19,12 @@ function App() {
   return (
     
     <div className="App">
-      {page === 0 && <SelectTree updatePageNumber/>}
+      <Login />
+      <Register />
+
     </div>
   )
+
 }
 
 export default App

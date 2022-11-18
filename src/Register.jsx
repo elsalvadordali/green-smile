@@ -20,7 +20,6 @@ const Register = ({ goNextPage }) => {
             updateUserId(res.user.uid);
         }
         else {
-            console.log("error signing up", res.code);
             setErrMessage(res.code);
         }
     }

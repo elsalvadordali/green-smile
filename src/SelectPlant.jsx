@@ -3,10 +3,9 @@ import { useState } from 'react'
 
 const SelectPlant = ({goNextPage}) => {
     const plants = ['corn', 'carrot', 'cauliflower', 'plum', 'eggplant', 'tulip', 'cabbage', 'wheat', 'pumpkin', 'radish', 'lotus', 'beet', 'star fruit', 'cucumber']
-
     const [selectedPlant, setPlant] = useState('')
 
-    function updateSelectedPlant(plant) {
+    function updatePlantState(plant) {
         setPlant(plant)
         goNextPage('garden')
     }
@@ -15,7 +14,7 @@ const SelectPlant = ({goNextPage}) => {
         <div>
             <h5>{localStorage.getItem('event')?.plant}</h5>
             <h5>Select a tree</h5>
-            {plants.map(p => <Plant key={p + '-card'} plant={p} selectedPlant={selectedPlant} updateSelectedPlant={updateSelectedPlant} />)}
+            {plants.map(p => <Plant key={p + '-card'} plant={p} updatePlantState={updatePlantState} selectedPlant={selectedPlant} />)}
         </div>
     )
 }

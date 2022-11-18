@@ -31,7 +31,7 @@ const Garden = () => {
     <div className="garden">
       {array.map((soil, index) => (
         <div className="soil" key={index + 1} onClick={() => selectPlot(index)}>
-          soil
+
         </div>
       ))}
     </div>

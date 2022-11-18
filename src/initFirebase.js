@@ -24,8 +24,7 @@ export async function loginUser(email, password) {
             return user;
       }
       catch (err) {
-            console.log("ERROR IN LOGIN", err.code);
-            return err.code;
+            return err;
             //err.code:
             //auth/invalid-email
             //auth/user-not-found
@@ -39,7 +38,7 @@ export async function register(email, password) {
       }
       catch (err) {
             // console.log("ERROR IN REGISTER", err.code);
-            return err.code;
+            return err;
       }
 }
 

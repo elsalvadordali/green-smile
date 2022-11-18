@@ -1,7 +1,8 @@
 import Plant from "./Plant"
 import { useState } from 'react'
+import './Plant.css'
 
-const SelectPlant = ({goNextPage}) => {
+const SelectPlant = ({ goNextPage }) => {
     const plants = ['corn', 'carrot', 'cauliflower', 'plum', 'eggplant', 'tulip', 'cabbage', 'wheat', 'pumpkin', 'radish', 'lotus', 'beet', 'star fruit', 'cucumber']
     const [selectedPlant, setPlant] = useState('')
 
@@ -11,11 +12,13 @@ const SelectPlant = ({goNextPage}) => {
     }
 
     return (
-        <div>
+        <>
             <h5>{localStorage.getItem('event')?.plant}</h5>
             <h5>Select a tree</h5>
-            {plants.map(p => <Plant key={p + '-card'} plant={p} updatePlantState={updatePlantState} selectedPlant={selectedPlant} />)}
-        </div>
+            <div className="grid">
+                {plants.map(p => <Plant key={p + '-card'} plant={p} updatePlantState={updatePlantState} selectedPlant={selectedPlant} />)}
+            </div>
+        </>
     )
 }
 

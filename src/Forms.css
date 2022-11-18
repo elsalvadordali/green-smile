@@ -2,61 +2,93 @@
     display: grid;
     grid-template-columns: 2;
     grid-template-rows: 12;
-    gap: .5rem;
-    margin: 3rem auto;
+    gap: 0.5rem;
+    /* margin: 3rem auto; */
+    margin-top: 5rem;
+}
+
+h1 span {
+color: #000;
 }
 
 h2 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+margin-top: 5rem;
+margin-bottom: 1rem;
+text-align: center;
+font-family: "Albert Sans", sans-serif;
+font-size: clamp(2.5rem, 2.1250rem + 1.6667vw, 3rem);
+letter-spacing: .2rem;
+grid-column-start: 1;
+grid-column-end: 3;
 }
 
 .email-label {
-    grid-column-start: 1;
-    grid-row-start: 2;
+grid-column-start: 1;
+grid-row-start: 2;
+opacity: 75%;
+font-size: 14px;
+margin-left: 2rem;
 }
 
 #email {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
+margin: 1rem, 5rem;
+margin-left: 2rem;
+padding: 2rem 2rem;
+border-radius: 1rem;
+grid-column-start: 1;
+grid-column-end: 3;
+grid-row-start: 3;
+background-color: #ddd8c4;
 }
 
 .password-label {
-    grid-column-start: 1;
-    grid-row-start: 4;
+grid-column-start: 1;
+grid-row-start: 4;
+opacity: 75%;
+font-size: 14px;
+margin-left: 2rem;
 }
 
 #password {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 5;
+margin: 1rem, 5rem;
+margin-left: 2rem;
+padding: 2rem 2rem;
+border-radius: 1rem;
+grid-column-start: 1;
+grid-column-end: 3;
+grid-row-start: 5;
+background-color: #ddd8c4;
 }
 
 input {
-    border: 2px solid black;
-    background-color: #ddd8c4;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 0 #a3c9a8, 4px 6px 0 #000;
-    outline: 0;
-    margin-bottom: .5rem;
-    max-width: 300px;
+border: 2px solid black;
+background-color: #ddd8c4;
+padding: 0.5rem 1rem;
+border-radius: 1rem;
+box-shadow: 2px 2px 0 #000;
+outline: 0;
+margin-bottom: 0.5rem;
+max-width: 300px;
 }
 
 button:hover,
 button:active {
-    background-color: #69a297;
-
+background-color: #69a297;
 }
 
 button {
-    background: #50808e;
-    border: 2px solid black;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 0 #a3c9a8, 4px 6px 0 #000;
-    grid-column-start: 1;
-    grid-row-start: 6;
-    margin-top: .5rem;
+background: #50808e;
+font-size: 16px;
+letter-spacing: 0.2rem;
+font-weight: bolder;
+color: #ddd8c4;
+text-transform: uppercase;
+border: 2px solid black;
+padding: 2rem 2rem;
+border-radius: 1rem;
+box-shadow: 2px 2px 0 #000;
+grid-column-start: 1;
+grid-row-start: 6;
+margin: 2rem 2rem;
+width: 42rem;
 }

@@ -10,7 +10,7 @@ import Register from './Register'
 
 function App() {
   const [userId, setUserId] = useState(localStorage.getItem('userId') || null)
-  const [page, setPage] = useState(userId ? 'write' : 'login')
+  const [page, setPage] = useState(userId ? 'write' : 'splash')
 
   function goNextPage(page) {
     setPage(page)
@@ -21,8 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <SplashPage />
-      {page === 'login' && <Login goNextPage={goNextPage} updateUserId={updateUserId} />}
+      {page === 'splash' && <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />}
       {page === 'register' && <Register goNextPage={goNextPage} updateUserId={updateUserId} />}
       {page === 'write' && <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />}
       {page === 'select' && <SelectPlant goNextPage={goNextPage} />}

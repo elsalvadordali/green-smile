@@ -30,7 +30,7 @@ const Login = ({ goNextPage, updateUserId }) => {
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>
                 <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
-                <button type='submit'>Login</button>
+                <button type='submit'>Next</button>
             </form>
             {errMessage ? <AuthError errMessage={errMessage} /> : null}
         </div>

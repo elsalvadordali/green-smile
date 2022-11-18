@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import SplashPage from './SplashPage'
 import Login from './Login'
 import WriteEntry from './WriteEntry'
 import SelectPlant from './SelectPlant'
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <SplashPage />
       {page === 'login' && <Login goNextPage={goNextPage} updateUserId={updateUserId} />}
       {page === 'register' && <Register goNextPage={goNextPage} updateUserId={updateUserId} />}
       {page === 'write' && <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />}

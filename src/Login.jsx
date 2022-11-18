@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { loginUser } from './initFirebase';
-
 import AuthError from './AuthError';
 import './Forms.css';
 
@@ -30,7 +29,7 @@ const Login = ({ goNextPage, updateUserId }) => {
                 <label htmlFor='email' className='email-label'>Email</label>
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>
-                <input type='text' id='password' onChange={(e) => setPword(e.target.value)} />
+                <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
                 <button type='submit'>Login</button>
             </form>
             {errMessage ? <AuthError errMessage={errMessage} /> : null}

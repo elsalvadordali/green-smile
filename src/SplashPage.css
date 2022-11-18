@@ -1,0 +1,17 @@
+.splash {
+  height: 50%;
+  padding: 2em;
+  text-align: center;
+  line-height: 1.125;
+  background-color: #50808e;
+}
+
+h1 {
+  font-size: clamp(1.25rem, -0.0625rem + 5.8333vw, 3rem);
+  color: #ddd8c4;
+}
+
+span {
+  display: block;
+  color: #000;
+}

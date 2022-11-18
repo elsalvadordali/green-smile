@@ -9,38 +9,23 @@
 
 import React from "react";
 import "./Garden.css";
-import { writeToFireStore } from './initFirebase'
+import { writeToFireStore } from './initFirebase';
 const array = Array(30).fill(null);
 
 const Garden = () => {
-  function handleClick(e) {
-    /*
-    // get parent(garden)
-    const parentEl = e.target.parentNode;
-    const pCords = parentEl.getBoundingClientRect();
-    const parentTop = pCords.top;
-    const parentLeft = pCords.left;
-    const soil = e.target;
-    const soilCords = soil.getBoundingClientRect();
-    const soilTop = soilCords.top;
-    const soilLeft = soilCords.left;
+  // function handleClick(e) {
 
-    console.log('test', e.x, e.y)
-    console.log(pCords, soilCords)
-    // calculate mouse position
-    const mouseTop = soilTop - parentTop;
-    const mouseLeft = soilLeft - parentLeft;
-    const coordinates = { top: mouseTop, left: mouseLeft };
-    console.log(coordinates);
-    */
-  }
+  // }
 
   function selectPlot(index) {
-    const entry = JSON.parse(localStorage.getItem('entry'))
-    const userId = localStorage.getItem('userId')
-    entry.plot = index
-    console.log(entry)
-    writeToFireStore(entry, userId)
+    const userId = localStorage.getItem('userId');
+    let month = new Date().getMonth().toString();
+    let date = new Date().getDate().toString();
+    const entry = JSON.parse(localStorage.getItem('entry'));
+    entry[month][date].plot = index;
+
+    writeToFireStore(entry, userId);
+    localStorage.clear();
   }
   return (
     <div className="garden">

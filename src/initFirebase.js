@@ -37,7 +37,6 @@ export async function register(email, password) {
             return user;
       }
       catch (err) {
-            // console.log("ERROR IN REGISTER", err.code);
             return err;
       }
 }

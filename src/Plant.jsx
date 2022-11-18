@@ -3,13 +3,11 @@ const Plant = ({ plant, updatePlantState, selectedPlant }) => {
     let month = new Date().getMonth().toString();
     let date = new Date().getDate().toString();
     const entry = JSON.parse(localStorage.getItem('entry'))
-    console.log("ENTRY", entry)
     function updatePlant(plant) {
         entry[month][date].plant = plant;
         localStorage.setItem('entry', JSON.stringify(entry))
         updatePlantState(plant)
     }
-
 
     return (
         <div className={selectedPlant === plant ? 'selected-plant plant-card' : 'plant-card'} onClick={() => updatePlant(plant)}>

@@ -30,5 +30,6 @@ export async function register(email, password) {
 
 export async function writeToFireStore(entry, userId) {
       const reference = doc(db, 'table', userId)
-      await updateDoc(reference, entry)
+      await setDoc(reference, entry)
+      console.log('done')
 }

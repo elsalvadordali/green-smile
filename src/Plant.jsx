@@ -1,16 +1,16 @@
-import { useState } from "react"
 
-const Plant = ({plant}) => {
-    const event = JSON.parse(localStorage.getItem('event'))
-    const [selectedPlant, setPlant] = useState(event?.plant | null)
+import './Plant.css'
+
+const Plant = ({plant, selectedPlant, updatePlantState}) => {
+    const entry = JSON.parse(localStorage.getItem('entry'))
 
     function updatePlant(plant) {
-        localStorage.setItem('event', JSON.stringify({...event, plant}))
-        console.log('plant', JSON.parse(localStorage.getItem('event')))
+        localStorage.setItem('entry', JSON.stringify({...entry, plant}))
+        updatePlantState(plant)
     }
 
     return (
-        <div className="card" onClick={() => updatePlant(plant)}>
+        <div className={selectedPlant === plant ? 'select-plant plant-card' : 'plant-card'} onClick={() => updatePlant(plant)}>
             <div className={plant + ' plant'}></div>
             <h4>{plant}</h4>
         </div>

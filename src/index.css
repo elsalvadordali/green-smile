@@ -1,20 +1,4 @@
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  /* font-size: 16px; */
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
 
 /* -------- GARDEN RESPONSIVENESS ----------- */
 html {
@@ -50,7 +34,7 @@ a {
 }
 a:hover {
   color: #535bf2;
-
+}
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital@0;1&family=DM+Serif+Display&display=swap');
 
 h1, h2, h3, h4, h5, h6 {

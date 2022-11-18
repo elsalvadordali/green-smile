@@ -1,22 +1,47 @@
+h5 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}
+
 .grid {
     display: flex;
     flex-flow: row wrap;
-
+    justify-content: space-evenly;
 
 }
 
 .plant-card {
-    width: 30%;
-    background-color: #998a86;
-    background-position: center center;
+    width: 45%;
+    background-color: #ddd8c4;
+    margin-bottom: 1.5rem;
+    border: 2px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    border-radius: 1rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #69a297;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-top: 2px solid black;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 0;
 }
 
 .plant {
     background-repeat: no-repeat;
-    background-position: 0px 0px;
-    width: 80px;
-    height: 80px;
+    background-position: center center;
+    width: 100%;
+    min-width: 80px;
+    min-height: 80px;
     position: relative;
+    margin-top: 1rem;
 }
 
 .corn-0 {

@@ -8,13 +8,11 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
         [date]: {
             promptNumber: 0,
             entry: "",
-
         }
     };
     const [journal, setJournal] = useState(localStorage.getItem('entry') ?
         JSON.parse(localStorage.getItem('entry'))
         : { ...monthEntry });
-    console.log("JOURNAL", journal);
 
     localStorage.setItem('entry', JSON.stringify(journal));
     const prompts = [
@@ -29,7 +27,6 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
     function submit() {
         goNextPage('select');
     }
-
     function updateJournalEntry(text) {
         setJournal({ ...journal, [month]: { [date]: { entry: text } } });
     }

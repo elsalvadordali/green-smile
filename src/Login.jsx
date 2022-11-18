@@ -19,7 +19,6 @@ const Login = ({ goNextPage, updateUserId }) => {
             updateUserId(res.user.uid);
         }
         else {
-            console.log("error logging in", res.code)
             setErrMessage(res.code)
         }
     }
@@ -34,7 +33,7 @@ const Login = ({ goNextPage, updateUserId }) => {
                 <input type='text' id='password' onChange={(e) => setPword(e.target.value)} />
                 <button type='submit'>Login</button>
             </form>
-        {errMessage ? <AuthError errMessage={errMessage}/> : null}
+            {errMessage ? <AuthError errMessage={errMessage} /> : null}
         </div>
     );
 };

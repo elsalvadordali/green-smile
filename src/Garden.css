@@ -1,0 +1,11 @@
+.garden {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.soil {
+  border: 1px solid white;
+  padding: 1rem;
+}

@@ -7,7 +7,6 @@ import Garden from './Garden'
 import SeeEntry from './SeeEntry'
 import Register from './Register'
 
-
 function App() {
   const [userId, setUserId] = useState(localStorage.getItem('userId') || null)
   const [page, setPage] = useState(userId ? 'write' : 'login')
@@ -28,8 +27,9 @@ function App() {
       {page === 'garden' && <Garden goNextPage={goNextPage} />} 
       {page === 'see' && <SeeEntry goNextPage={goNextPage} />}
 
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

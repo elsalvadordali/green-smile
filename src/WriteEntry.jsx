@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const WriteEntry = ({promptNumber, goNextPage}) => {
+const WriteEntry = ({ promptNumber, goNextPage }) => {
     const [journal, setJournal] = useState(localStorage.getItem('entry') ? JSON.parse(localStorage.getItem('entry')) : {
         date: new Date().getDate(),
         promptNumber,
@@ -22,9 +22,9 @@ const WriteEntry = ({promptNumber, goNextPage}) => {
     }
     return (
         <form onSubmit={() => submit()}>
-        {promptNumber}
+            {promptNumber}
             <h2>{prompts[promptNumber]}</h2>
-            <textarea value={journal.entry} onChange={(e) => setJournal({...journal, entry: e.target.value})}/>
+            <textarea value={journal.entry} onChange={(e) => setJournal({ ...journal, entry: e.target.value })} />
             <button>Give Thanks!</button>
         </form>
     )

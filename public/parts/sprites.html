@@ -14,25 +14,34 @@
             grid-template-rows: repeat(6, 1fr);
         }
         .corn-growing-1 {
-            background-image: url('https://our-farm-game.s3.us-west-1.amazonaws.com/Objects/fplants.png');
+            background-image: url('https://our-farm-game.s3.us-west-1.amazonaws.com/Objects/fplants.png')0 0;
             background-repeat: no-repeat;
             background-position: 0px 0px;
             width: 80px;
             height: 160px;
         }
+        .corn-growing-2 {
+            background-image: url('https://our-farm-game.s3.us-west-1.amazonaws.com/Objects/fplants.png');
+            background-repeat: no-repeat;
+            background-position: -85px 0px;
+            width: 80px;
+            height: 160px;
+}
   
         .ax1 {
             grid-column-start: 1;
             grid-row-start: 1;
         }
         .bx4 {
-
+            grid-column-start: 2;
+            grid-row-start: 1;
         }
     </style>
 </head>
 <body>
     <div class="grid">
         <div class="corn-growing-1 ax1"></div>
+        <div class="corn-growing-2 bx4"></div>
     </div>
 </body>
 

@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, getFirestore } from 'firebase/firestore';
 
-//ERASE BEFORE DEPLOY
 const firebaseConfig = {
       apiKey: "AIzaSyD9rmqHWcKCvKk5OUppb94R8AeEsBn_Smk",
       authDomain: "green-smile-5bee9.firebaseapp.com",
@@ -15,6 +14,7 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
 const db = getFirestore();
 

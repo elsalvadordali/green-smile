@@ -5,28 +5,34 @@
     gap: .5rem;
     margin: 3rem auto;
 }
+
 h2 {
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
 .email-label {
     grid-column-start: 1;
     grid-row-start: 2;
 }
+
 #email {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
 }
+
 .password-label {
     grid-column-start: 1;
     grid-row-start: 4;
 }
+
 #password {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 5;
 }
+
 input {
     border: 2px solid black;
     background-color: #fff;
@@ -37,10 +43,13 @@ input {
     margin-bottom: .5rem;
     max-width: 300px;
 }
-button:hover, button:active {
+
+button:hover,
+button:active {
     background-color: #69a297;
 
 }
+
 button {
     background: #50808e;
     border: 2px solid black;

@@ -6,9 +6,11 @@ import './Forms.css';
 
 
 const Register = ({ goNextPage }) => {
+
     const [email, setEmail] = useState('');
     const [pword, setPword] = useState('');
     const [errMessage, setErrMessage] = useState(null);
+
 
     async function signUp(e) {
         e.preventDefault();

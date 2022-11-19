@@ -4,7 +4,7 @@ import './see.css'
 const SeeEntry = ({ entry, month, date, closeSee }) => {
     const prompts = [
         `You were proud of...`,
-        `You were thankfur for...`,
+        `You were thankful for...`,
         `You honored yourself by...`,
         `You grew by...`,
         `It was a great day because...`,

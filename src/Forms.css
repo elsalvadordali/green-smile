@@ -1,103 +1,101 @@
 .auth {
-    display: grid;
-    grid-template-columns: 2;
-    grid-template-rows: 12;
-    gap: 0.5rem;
-    /* margin: 3rem auto; */
-    margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 12;
+  gap: 0.5rem;
+  /* margin: 3rem auto; */
+  margin-top: 5rem;
 }
 
 h1 span {
-    color: #000;
+  color: #000;
 }
 
 h2 {
-    margin-bottom: 1rem;
-    text-align: center;
-    font-family: "Albert Sans", sans-serif;
-    letter-spacing: .2rem;
-    grid-column-start: 1;
-    grid-column-end: 3;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Albert Sans", sans-serif;
+  letter-spacing: 0.2rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .email-label {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    opacity: 75%;
-    padding: .5rem .25rem;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  opacity: 75%;
+  padding: 0.5rem 0.25rem;
 }
 
 #email,
 #password {
-
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    background-color: #ddd8c4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  background-color: #ddd8c4;
 }
 
 #email:focus {
-    opacity: 75%;
+  opacity: 75%;
 }
 
 .password-label {
-    grid-column-start: 1;
-    grid-row-start: 4;
-    opacity: 75%;
-    padding: .5rem .25rem;
-
+  grid-column-start: 1;
+  grid-row-start: 4;
+  opacity: 75%;
+  padding: 0.5rem 0.25rem;
 }
 
 #password {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 5;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
 }
 
 input {
-    border: 2px solid black;
-    background-color: #ddd8c4;
-    padding: 0.75rem 1rem;
-    border-radius: .75rem;
-    box-shadow: 2px 2px 0 #000;
-    outline: 0;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    max-width: 360px;
-    box-sizing: border-box;
-    font: inherit;
+  border: 2px solid black;
+  background-color: #ddd8c4;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 2px 2px 0 #000;
+  outline: 0;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+  font: inherit;
 }
 
 input:active {
-    font: inherit;
+  font: inherit;
 }
 
 button:hover,
 button:active {
-    background-color: #69a297;
+  background-color: #69a297;
 }
 
 .link {
-    grid-row-start: 7;
+  grid-row-start: 7;
 }
 
 .error {
-    grid-row-start: 6;
+  grid-row-start: 6;
 }
 
 button {
-    background: #50808e;
-    font-size: 16px;
-    letter-spacing: 0.2rem;
-    font-weight: bolder;
-    color: #ddd8c4;
-    text-transform: uppercase;
-    border: 2px solid black;
+  background: #50808e;
+  font-size: 16px;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  color: #ddd8c4;
+  text-transform: uppercase;
+  border: 2px solid black;
 
-    border-radius: 1rem;
-    box-shadow: 2px 2px 0 #000;
-    grid-column-start: 1;
-    grid-row-start: 8;
-    padding: .75rem 2rem;
-    width: 100%;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 0 #000;
+  grid-column-start: 1;
+  grid-row-start: 8;
+  padding: 0.75rem 2rem;
+  width: 100%;
 }

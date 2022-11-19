@@ -29,7 +29,8 @@ const Login = ({ updateUserId, toggleLogin }) => {
             updateUserId(res.user.uid);
         }
         else {
-            setErrMessage(res.code)
+            console.log("ERROR LOGGING IN", typeof res.code);
+            setErrMessage(res.code);
         }
     }
 
@@ -41,7 +42,7 @@ const Login = ({ updateUserId, toggleLogin }) => {
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>
                 <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
-                <p className='error'>{errMessage ? '⚠' + <AuthError errMessage={errMessage} /> : null}</p>
+                <p className='error'>{errMessage && <AuthError errMessage={errMessage} />}</p>
                 <button className='link' type='button' onClick={() => toggleLogin()} >Register</button>
 
                 <button type='submit'>Next</button>

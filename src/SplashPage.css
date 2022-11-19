@@ -29,3 +29,19 @@ p {
   margin-bottom: -10em;
   border-radius: 50%;
 }
+
+.auth h2 {
+  margin-top: 5rem;
+}
+
+.link {
+  background-color: transparent;
+  color: black;
+  border: 0;
+  box-shadow: none;
+  width: fit-content;
+  text-transform: none;
+  text-decoration: underline;
+  padding: 0 1rem;
+  margin: 0 2rem 3rem;
+}

@@ -5,7 +5,7 @@ import AuthError from './AuthError';
 import './Forms.css';
 
 
-const Register = ({ goNextPage }) => {
+const Register = ({ goNextPage, updateUserId, toggleLogin }) => {
 
     const [email, setEmail] = useState('');
     const [pword, setPword] = useState('');
@@ -28,6 +28,7 @@ const Register = ({ goNextPage }) => {
 
     return (
         <div>
+
             <form onSubmit={(e) => signUp(e)} className='auth'>
                 <h2>Register</h2>
                 <label htmlFor='email' className='email-label'>Email</label>
@@ -37,6 +38,8 @@ const Register = ({ goNextPage }) => {
 
                 <button type='submit'>Register</button>
             </form>
+            <button className='link' type='button' onClick={() => toggleLogin()} >Login</button>
+
             {errMessage ? <AuthError errMessage={errMessage} /> : null}
         </div>
     );

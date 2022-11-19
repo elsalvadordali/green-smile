@@ -49,11 +49,7 @@ p {
   font-family: 'Albert Sans', sans-serif;
 }
 
-input {
-  font: inherit;
-  font-size: 1.5rem;
-  padding: 0.5em;
-}
+
 
 input[type="password"] {
   font-size: 1.75rem;

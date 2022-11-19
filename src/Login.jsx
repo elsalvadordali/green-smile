@@ -4,7 +4,7 @@ import AuthError from './AuthError';
 import './Forms.css';
 
 
-const Login = ({ goNextPage, updateUserId }) => {
+const Login = ({ updateUserId, toggleLogin }) => {
     const [email, setEmail] = useState('');
     const [pword, setPword] = useState('');
     const [errMessage, setErrMessage] = useState(null);
@@ -41,9 +41,10 @@ const Login = ({ goNextPage, updateUserId }) => {
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>
                 <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
+                {errMessage ? <AuthError errMessage={errMessage} /> : null}
                 <button type='submit'>Next</button>
             </form>
-            {errMessage ? <AuthError errMessage={errMessage} /> : null}
+            <button className='link' type='button' onClick={() => toggleLogin()} >Register</button>
         </div>
     );
 };

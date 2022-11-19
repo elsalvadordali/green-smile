@@ -10,6 +10,7 @@
     box-sizing: border-box;
     border: 2px solid black;
     box-shadow: 2px 2px 0 black;
+    max-width: 460px;
 }
 
 .bar {

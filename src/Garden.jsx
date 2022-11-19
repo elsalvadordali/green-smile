@@ -14,31 +14,29 @@ const Garden = ({ goNextPage, db }) => {
 
   function selectPlot(index) {
     const entry = JSON.parse(localStorage.getItem('entry'))
-    if (entry) {
+    console.log('ENTRYYYY', entry)
+    if (entry && entry[today].entry) {
+
       const userId = localStorage.getItem('userId')
       entry[today].plot = index
       if (db) {
-        //merge entry with db
+        console.log('old DB')
         db[month][today] = entry[today]
-        console.log(db)
         writeToFireStore(db, userId)
         localStorage.setItem('db', JSON.stringify(db))
         setLs(db)
-
       } else {
         const newDb = {}
-        newDb[month] = entry
-        console.log(newDb, db)
+        newDb[month] = {}
+        newDb[month][today] = entry[today]
+        console.log('NEW DB', newDb)
         writeNewDoc(newDb, userId)
-        //db should be empty??
-        console.log(newDb)
         localStorage.setItem('db', JSON.stringify(newDb))
         setLs(newDb)
-
       }
       localStorage.setItem('entry', null)
-      ls.entry = null
-      //update db and setLS
+      console.log(ls)
+      //ls.entry = null
     }
   }
   function view(entry) {
@@ -71,7 +69,6 @@ const Garden = ({ goNextPage, db }) => {
     }
   }
   arr = makeArr()
-  console.log('LAST MONTH?', month - 1)
   return (
     <div>
       {showEntry}

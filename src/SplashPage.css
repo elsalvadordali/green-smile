@@ -47,6 +47,13 @@ p {
 
 .splash-img .plant {
   margin: 0;
+  min-height: 160px;
+}
+
+.logo {
+  background: url('/logo.png');
+  background-size: 180px auto;
+
 }
 
 .auth h2 {

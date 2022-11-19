@@ -18,7 +18,7 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
     localStorage.setItem('entry', JSON.stringify(journal));
     const prompts = [
         `Today I'm proud of...`,
-        `I'm trankful for...`,
+        `I'm thankful for...`,
         `I honored myself by...`,
         `I grew today by...`,
         `Today was a great day because...`,
@@ -31,7 +31,7 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
     }
     function updateJournalEntry(text) {
         let currentEntry = journal[month][date]
-        currentEntry.entry = currentEntry.entry + text
+        currentEntry.entry = text
         let newEntry = {
             ...journal, [month]: { [date]: currentEntry }
         }

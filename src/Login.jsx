@@ -36,7 +36,7 @@ const Login = ({ updateUserId, toggleLogin }) => {
     return (
         <div>
             <form onSubmit={(e) => authenticate(e)} className='auth'>
-                <h2>Login</h2>
+                <h3>Login</h3>
                 <label htmlFor='email' className='email-label'>Email</label>
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>

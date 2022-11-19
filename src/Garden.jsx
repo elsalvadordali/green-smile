@@ -1,7 +1,7 @@
 import { setPersistence } from "firebase/auth";
 import { useState } from "react";
 import "./Garden.css";
-import { writeToFireStore } from './initFirebase'
+import { writeToFireStore, writeNewDoc } from './initFirebase'
 
 const Garden = ({ goNextPage, db }) => {
   const ls = JSON.parse(localStorage.getItem('db'))
@@ -15,10 +15,11 @@ const Garden = ({ goNextPage, db }) => {
       const userId = localStorage.getItem('userId')
       entry[month][date].plot = index
       if (db) {
+        writeToFireStore(entry, userId)
 
       } else {
-        writeToFireStore(entry, userId)
         localStorage.setItem('entry', null)
+        writeNewDoc(entry, userId)
       }
 
     }

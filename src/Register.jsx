@@ -30,11 +30,11 @@ const Register = ({ goNextPage, updateUserId, toggleLogin }) => {
         <div>
 
             <form onSubmit={(e) => signUp(e)} className='auth'>
-                <h2>Register</h2>
+                <h3>Register</h3>
                 <label htmlFor='email' className='email-label'>Email</label>
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>
-                <input type='text' id='password' onChange={(e) => setPword(e.target.value)} />
+                <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
 
                 <button type='submit'>Register</button>
             </form>

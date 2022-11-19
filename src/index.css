@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital@0;1&family=DM+Serif+Display&display=swap');
 
 /* -------- GARDEN RESPONSIVENESS ----------- */
-html {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 50%;
-
+  font-size: 1rem;
 }
 
 #root {
   max-width: 375px;
 }
-
 
 .modal {
   position: fixed;
@@ -33,6 +32,9 @@ html {
 
 button {}
 
+form {
+  padding: 1rem;
+}
 
 h1,
 h2,
@@ -41,7 +43,14 @@ h4,
 h5,
 h6 {
   font-family: 'DM Serif Display', serif;
+}
 
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.5rem;
 }
 
 body,
@@ -52,6 +61,7 @@ p {
 
 
 input[type="password"] {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  padding: .5rem .675rem;
   letter-spacing: 0.15rem;
 }

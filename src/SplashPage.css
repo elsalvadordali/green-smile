@@ -1,15 +1,24 @@
 .splash {
-  height: 50%;
-  padding: 1.75em;
-  text-align: center;
+  padding: 1em;
   line-height: 1.125;
   background-color: #69a297;
+  margin-bottom: 5rem;
+  text-align: center;
+
+}
+
+.splash p {
+  text-align: left;
+  margin-left: 1.5rem;
+  border-left: 2px solid #ddd8c4;
+  padding: 1.5rem
 }
 
 h1 {
   margin-bottom: 0;
   font-size: clamp(3rem, 0.7500rem + 10.0000vw, 6rem);
   color: #ddd8c4;
+  text-align: center;
 }
 
 span {
@@ -18,7 +27,6 @@ span {
 }
 
 p {
-  width: 80%;
   margin-inline: auto;
   font-size: clamp(1.25rem, 0.8750rem + 1.6667vw, 1.75rem);
   color: #ddd8c4;
@@ -26,12 +34,12 @@ p {
 }
 
 .splash-img {
-  margin-bottom: -10em;
   border-radius: 50%;
+  margin: 0 auto -7rem auto;
 }
 
 .auth h2 {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .link {

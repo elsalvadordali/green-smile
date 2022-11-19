@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, getDoc, updateDoc, getFirestore } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, setDoc, getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
       apiKey: "AIzaSyD9rmqHWcKCvKk5OUppb94R8AeEsBn_Smk",
@@ -54,4 +54,9 @@ export async function getMonth(userId) {
       } else {
             return false
       }
+}
+
+export async function writeNewDoc(entry, userId) {
+      const reference = doc(db, 'table', userId);
+      let res = await setDoc(reference, entry);
 }

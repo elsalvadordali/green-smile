@@ -4,29 +4,32 @@
 html {
   box-sizing: border-box;
   font-size: 50%;
+
 }
 
-@media (min-width: 48em) {
-  html {
-    font-size: 56.25%;
-  }
+#root {
+  max-width: 375px;
 }
 
-@media (min-width: 64em) {
-  html {
-    font-size: 62.5%;
-  }
+
+.modal {
+  position: fixed;
+  width: 90vw;
+  height: 52vh;
+  top: 24vh;
+  background-color: #ddd8c4;
+  left: 5vw;
+  border: 2px solid black;
+  border-radius: 1rem;
 }
 
-/* ------------------------------------------- */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+.row {
+  display: flex;
+  flex: row nowrap;
+  justify-content: space-evenly;
 }
+
+button {}
 
 
 h1,

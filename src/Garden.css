@@ -2,10 +2,43 @@
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
+  gap: .5rem;
+  height: 84vh;
+  background-color: #ddd8c4;
+  padding: 1rem;
+  border-radius: 1rem;
+
 }
 
 .soil {
-  border: 1px solid white;
+  border: 2px solid #abc9a8;
   padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  height: calc(60vh / 6);
+}
+
+.soil:hover {
+  border: 2px solid black;
+  background-color: #ddd8c4;
+}
+
+header {
+  display: flex;
+  margin-bottom: 1rem;
+  background-color: #84b59f;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+header button {
+  margin-right: 2rem;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: .5rem 1rem;
 }

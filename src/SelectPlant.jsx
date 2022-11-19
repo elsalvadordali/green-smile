@@ -1,24 +1,37 @@
 import Plant from "./Plant"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Plant.css'
+import Confirm from "./Confirm";
 
 const SelectPlant = ({ goNextPage }) => {
     const plants = ['corn', 'carrot', 'cauliflower', 'plum', 'eggplant', 'tulip', 'cabbage', 'wheat', 'pumpkin', 'radish', 'lotus', 'beet', 'star fruit', 'cucumber']
     const [selectedPlant, setPlant] = useState('')
+    const [modalOpen, setModal] = useState(false)
 
     function updatePlantState(plant) {
         setPlant(plant)
+    }
+    useEffect(() => {
+        if (selectedPlant) setModal(true)
+    }, [selectedPlant])
+
+    function navigateAway() {
         goNextPage('garden')
     }
-
+    function closeModal() {
+        setModal(false)
+        setPlant('')
+    }
+    const message = selectedPlant == 'eggplant' | selectedPlant == 'corn' ? `Are you sure you want to plant ${selectedPlant}?` : `Are you sure you want to plant a ${selectedPlant}?`
     return (
-        <>
-            <h5>{localStorage.getItem('event')?.plant}</h5>
-            <h5>Select a tree</h5>
+        <div onClick={() => setModal(false)}>
+            {modalOpen}
+            <h5>Select a plant</h5>
             <div className="grid">
                 {plants.map(p => <Plant key={p + '-card'} plant={p} updatePlantState={updatePlantState} selectedPlant={selectedPlant} />)}
             </div>
-        </>
+            {modalOpen && <Confirm yes={navigateAway} no={closeModal} message={message} plant={selectedPlant} />}
+        </div>
     )
 }
 

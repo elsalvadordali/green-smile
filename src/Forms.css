@@ -53,9 +53,9 @@ button:active {
 button {
     background: #50808e;
     border: 2px solid black;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    box-shadow: 2px 2px 0 #a3c9a8, 4px 6px 0 #000;
+    padding: .5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 0 #000;
     grid-column-start: 1;
     grid-row-start: 6;
     margin-top: .5rem;

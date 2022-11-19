@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc, getFirestore } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
       apiKey: "AIzaSyD9rmqHWcKCvKk5OUppb94R8AeEsBn_Smk",
@@ -11,7 +11,6 @@ const firebaseConfig = {
       messagingSenderId: "998688888679",
       appId: "1:998688888679:web:8bac6d09e5bade1a5301c2"
 };
-
 
 const app = initializeApp(firebaseConfig);
 
@@ -30,7 +29,6 @@ export async function loginUser(email, password) {
             //auth/user-not-found
       }
 }
-
 export async function register(email, password) {
       try {
             let user = await createUserWithEmailAndPassword(auth, email, password);
@@ -40,8 +38,20 @@ export async function register(email, password) {
             return err;
       }
 }
-
 export async function writeToFireStore(entry, userId) {
       const reference = doc(db, 'table', userId);
-      await updateDoc(reference, entry);
+      let res = await updateDoc(reference, entry);
+}
+export async function getMonth(userId) {
+      const reference = doc(db, 'table', userId);
+      let docSnap = await getDoc(reference);
+      if (docSnap.exists()) {
+            let res = docSnap.data()
+            if (Object.entries(res).length) {
+                  return res
+            }
+            return false
+      } else {
+            return false
+      }
 }

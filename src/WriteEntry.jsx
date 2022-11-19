@@ -4,17 +4,16 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
     let monthEntry = {};
     let month = new Date().getMonth().toString();
     let date = new Date().getDate().toString();
+
     monthEntry[month] = {
         [date]: {
             promptNumber: 0,
             entry: "",
-
         }
     };
-    const [journal, setJournal] = useState(localStorage.getItem('entry') ?
-        JSON.parse(localStorage.getItem('entry'))
-        : { ...monthEntry });
-    console.log("JOURNAL", journal);
+    let lsEntry = JSON.parse(localStorage.getItem('entry'))
+    const [journal, setJournal] = useState(lsEntry ?
+        lsEntry : { ...monthEntry });
 
     localStorage.setItem('entry', JSON.stringify(journal));
     const prompts = [
@@ -26,15 +25,20 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
         `Today I smiled because...`,
         `I'll never forget today because...`
     ];
-    function submit() {
-        goNextPage('select');
+    function submit(e) {
+        e.preventDefault()
+        goNextPage('select')
     }
-
     function updateJournalEntry(text) {
-        setJournal({ ...journal, [month]: { [date]: { entry: text } } });
+        let currentEntry = journal[month][date]
+        currentEntry.entry = currentEntry.entry + text
+        let newEntry = {
+            ...journal, [month]: { [date]: currentEntry }
+        }
+        setJournal(newEntry);
     }
     return (
-        <form onSubmit={() => submit()}>
+        <form onSubmit={(e) => submit(e)}>
             {promptNumber}
             <h2>{prompts[promptNumber]}</h2>
             <textarea value={journal[month][date].entry} onChange={(e) => updateJournalEntry(e.target.value)} />

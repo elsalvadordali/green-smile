@@ -4,10 +4,22 @@ import { loginUser } from './initFirebase';
 import AuthError from './AuthError';
 import './Forms.css';
 
+
 const Login = ({ goNextPage, updateUserId }) => {
     const [email, setEmail] = useState('');
     const [pword, setPword] = useState('');
     const [errMessage, setErrMessage] = useState(null);
+
+    let monthEntry = {};
+    let month = new Date().getMonth().toString();
+    let date = new Date().getDate().toString();
+
+    monthEntry[month] = {
+        [date]: {
+            promptNumber: 0,
+            entry: "",
+        }
+    };
 
     async function authenticate(e) {
         e.preventDefault();
@@ -15,11 +27,9 @@ const Login = ({ goNextPage, updateUserId }) => {
         //res is either user object or error object
         if (res.user?.uid) {
             localStorage.setItem('userId', res.user.uid);
-            goNextPage('write'); //skip register page
             updateUserId(res.user.uid);
         }
         else {
-            console.log("error logging in", res.code)
             setErrMessage(res.code)
         }
     }
@@ -34,7 +44,7 @@ const Login = ({ goNextPage, updateUserId }) => {
                 <input type='text' id='password' onChange={(e) => setPword(e.target.value)} />
                 <button type='submit'>Login</button>
             </form>
-        {errMessage ? <AuthError errMessage={errMessage}/> : null}
+            {errMessage ? <AuthError errMessage={errMessage} /> : null}
         </div>
     );
 };

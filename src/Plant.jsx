@@ -3,10 +3,15 @@ const Plant = ({ plant, updatePlantState, selectedPlant }) => {
     let month = new Date().getMonth().toString();
     let date = new Date().getDate().toString();
     const entry = JSON.parse(localStorage.getItem('entry'))
+
     function updatePlant(plant) {
-        entry[month][date].plant = plant;
-        localStorage.setItem('entry', JSON.stringify(entry))
-        updatePlantState(plant)
+        if (updatePlantState) {
+            entry[month][date].plant = plant;
+            console.log(entry)
+
+            localStorage.setItem('entry', JSON.stringify(entry))
+            updatePlantState(plant)
+        }
     }
 
     return (

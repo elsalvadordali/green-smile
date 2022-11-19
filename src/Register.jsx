@@ -35,13 +35,14 @@ const Register = ({ goNextPage, updateUserId, toggleLogin }) => {
                 <input type='text' id='email' onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor='password' className='password-label'>Password</label>
                 <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
+                {errMessage && <AuthError errMessage={errMessage} />}
+                <button className='link' type='button' onClick={() => toggleLogin()} >Login</button>
 
                 <button type='submit'>Register</button>
             </form>
-            <button className='link' type='button' onClick={() => toggleLogin()} >Login</button>
 
-            {errMessage ? <AuthError errMessage={errMessage} /> : null}
-        </div>
+
+        </div >
     );
 };
 

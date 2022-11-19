@@ -39,8 +39,7 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
     }
     return (
         <form onSubmit={(e) => submit(e)}>
-            {promptNumber}
-            <h2>{prompts[promptNumber]}</h2>
+            <h3>{prompts[promptNumber]}</h3>
             <textarea value={journal[month][date].entry} onChange={(e) => updateJournalEntry(e.target.value)} />
             <button>Give Thanks!</button>
         </form>

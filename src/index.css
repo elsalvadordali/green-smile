@@ -15,13 +15,18 @@ body {
 
 .modal {
   position: fixed;
-  width: 90vw;
-  height: 52vh;
-  top: 24vh;
+  width: 88vw;
+  height: 60vh;
+  top: 15vh;
   background-color: #ddd8c4;
-  left: 5vw;
+  left: 6vw;
   border: 2px solid black;
   border-radius: 1rem;
+}
+
+.modal button {
+  width: fit-content;
+  margin-top: 2rem;
 }
 
 .row {
@@ -30,7 +35,6 @@ body {
   justify-content: space-evenly;
 }
 
-button {}
 
 form {
   padding: 1rem;
@@ -51,6 +55,7 @@ h2 {
 
 h3 {
   font-size: 2.5rem;
+  margin: .5rem
 }
 
 body,

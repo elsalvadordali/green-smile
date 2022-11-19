@@ -3,21 +3,20 @@
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(5, 1fr);
   gap: .5rem;
-  height: 84vh;
+  height: 77vh;
   background-color: #ddd8c4;
   padding: 1rem;
   border-radius: 1rem;
-
+  margin: 1rem;
 }
 
 .soil {
   border: 2px solid #abc9a8;
-  padding: 1rem;
   border-radius: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
-  height: calc(60vh / 6);
+  height: calc(66vh / 6);
 }
 
 .soil:hover {
@@ -27,15 +26,26 @@
 
 header {
   display: flex;
-  margin-bottom: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem;
+  margin-bottom: 0;
   background-color: #84b59f;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: .5rem 1rem;
   box-sizing: border-box;
 }
 
+header h3 {
+  margin: 0;
+  margin: 0;
+}
+
 header button {
+  padding: .25rem .5rem;
   margin-right: 2rem;
+  width: fit-content;
+  box-shadow: ;
 }
 
 .garden h2 {

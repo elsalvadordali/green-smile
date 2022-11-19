@@ -50,6 +50,6 @@ p {
   width: fit-content;
   text-transform: none;
   text-decoration: underline;
-  padding: 0 1rem;
-  margin: 0 2rem 3rem;
+  padding: 0 .25rem;
+  margin: .25rem .25rem .75rem;
 }

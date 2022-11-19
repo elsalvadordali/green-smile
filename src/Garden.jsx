@@ -54,7 +54,7 @@ const Garden = ({ goNextPage, db }) => {
     <div>
       <header>
         <button>{'<'}</button>
-        <h2>{month}</h2>
+        <h3>{month}</h3>
 
       </header>
       <div className="garden">

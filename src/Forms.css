@@ -12,7 +12,6 @@ h1 span {
 }
 
 h2 {
-    margin-top: 5rem;
     margin-bottom: 1rem;
     text-align: center;
     font-family: "Albert Sans", sans-serif;
@@ -64,7 +63,8 @@ input {
     outline: 0;
     margin-bottom: 0.5rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 360px;
+    box-sizing: border-box;
     font: inherit;
 }
 
@@ -75,6 +75,14 @@ input:active {
 button:hover,
 button:active {
     background-color: #69a297;
+}
+
+.link {
+    grid-row-start: 7;
+}
+
+.error {
+    grid-row-start: 6;
 }
 
 button {
@@ -89,8 +97,7 @@ button {
     border-radius: 1rem;
     box-shadow: 2px 2px 0 #000;
     grid-column-start: 1;
-    grid-row-start: 6;
-    margin: 2rem 2rem;
-    padding: 1.5rem 2rem;
+    grid-row-start: 8;
+    padding: .75rem 2rem;
     width: 100%;
 }

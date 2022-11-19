@@ -42,9 +42,10 @@ const Login = ({ updateUserId, toggleLogin }) => {
                 <label htmlFor='password' className='password-label'>Password</label>
                 <input type='password' id='password' onChange={(e) => setPword(e.target.value)} />
                 {errMessage ? <AuthError errMessage={errMessage} /> : null}
+                <button className='link' type='button' onClick={() => toggleLogin()} >Register</button>
+
                 <button type='submit'>Next</button>
             </form>
-            <button className='link' type='button' onClick={() => toggleLogin()} >Register</button>
         </div>
     );
 };

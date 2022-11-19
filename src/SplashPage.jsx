@@ -16,7 +16,7 @@ const SplashPage = ({ goNextPage, updateUserId }) => {
       <div className='splash'>
         <h1>Happy<span>Garden</span></h1>
         <p>Visualize the effect of mindfulness by growing plants</p>
-        <img src="https://dummyimage.com/150x150/ddd8c4/69a297.png&text=pixel+art+here" alt="" className='splash-img' />
+        <div className='splash-img'><div className='plant plum-3'></div></div>
       </div>
       {showLogin && <Login goNextPage={goNextPage} updateUserId={updateUserId} toggleLogin={toggleLogin} />}
       {showLogin == false && <Register goNextPage={goNextPage} updateUserId={updateUserId} toggleLogin={toggleLogin} />}

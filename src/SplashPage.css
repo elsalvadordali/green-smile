@@ -35,7 +35,18 @@ p {
 
 .splash-img {
   border-radius: 50%;
-  margin: 0 auto -7rem auto;
+  margin: 0 auto -5rem auto;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  padding-top: -2rem;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: #50808e;
+}
+
+.splash-img .plant {
+  margin: 0;
 }
 
 .auth h2 {

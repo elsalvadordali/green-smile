@@ -22,7 +22,7 @@ const SelectPlant = ({ goNextPage }) => {
         setModal(false)
         setPlant('')
     }
-    const message = selectedPlant == 'eggplant' | selectedPlant == 'corn' ? `Are you sure you want to plant ${selectedPlant}?` : `Are you sure you want to plant a ${selectedPlant}?`
+    const message = selectedPlant == 'corn' | selectedPlant == 'wheat' ? `Are you sure you want to plant ${selectedPlant}?` : `Are you sure you want to plant a(n) ${selectedPlant}?`
     return (
         <div onClick={() => setModal(false)}>
             {modalOpen}

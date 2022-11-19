@@ -13,6 +13,7 @@ import { getMonth } from "./initFirebase";
 function App() {
   const [page, setPage] = useState(null)
   const [userId, setUserId] = useState(localStorage.getItem('userId') || null)
+  const [date, setDate] = useState(new Date().getDate().toString())
   const [db, setDB] = useState(null)
 
   const thisMonth = new Date().getMonth()
@@ -37,19 +38,43 @@ function App() {
   }, [db])
 
   function returnPageFromLocalStorage() {
+    forTesting()
+
     let ls = JSON.parse(localStorage.getItem('entry'))
     if (ls == null && userId) return 'write'
     if (ls == null) return 'login'
-    if (ls[thisMonth][thisDay].plant) return 'garden'
-    if (ls[thisMonth][thisDay].entry) return 'select'
-    if (ls) return 'write'
-    return 'login'
+
+    if (ls[date]) {
+      if (ls[thisDay].plant) return 'garden'
+      if (ls[thisDay].entry) return 'select'
+      if (ls) return 'write'
+      return 'login'
+    } else {
+      ls = null
+      localStorage.setItem('entry', null)
+      if (userId) return 'write'
+      return 'login'
+    }
   }
+
+  function forTesting() {
+    let oldEntry = {
+      "15": {
+        "plot": 1,
+        "plant": "wheat"
+      }
+    }
+    localStorage.setItem('entry', JSON.stringify(oldEntry))
+
+  }
+
 
   function returnCurrentPage() {
     if (db) {
-      if (db[thisMonth][thisDay].plant) return 'garden'
-      if (db[thisMonth][thisDay].entry) return 'select'
+      if (db[thisMonth][thisDay]) {
+        if (db[thisMonth][thisDay].plant) return 'garden'
+        if (db[thisMonth][thisDay].entry) return 'select'
+      }
       return 'write'
     } else {
       return returnPageFromLocalStorage()

@@ -262,18 +262,22 @@ h4 {
     background-image: url('/cropped-crops/beet-3.png');
 }
 
+.star-0,
 .fruit-0 {
     background-image: url('/cropped-crops/star-0.png');
 }
 
+.star-1,
 .fruit-1 {
     background-image: url('/cropped-crops/star-1.png');
 }
 
+.star-2,
 .fruit-2 {
     background-image: url('/cropped-crops/star-2.png');
 }
 
+.star-3,
 .fruit-3 {
     background-image: url('/cropped-crops/star-3.png');
 }

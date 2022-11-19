@@ -9,6 +9,7 @@ const Plant = ({ plant, updatePlantState, selectedPlant }) => {
             entry[month][date].plant = plant;
             console.log(entry)
 
+            console.log('PLANT IS ', entry)
             localStorage.setItem('entry', JSON.stringify(entry))
             updatePlantState(plant)
         }
@@ -17,7 +18,6 @@ const Plant = ({ plant, updatePlantState, selectedPlant }) => {
     return (
         <div className={selectedPlant === plant ? 'selected-plant plant-card' : 'plant-card'} onClick={() => updatePlant(plant)}>
             <div className={plant + '-3' + ' plant'}></div>
-
             <h4>{plant}</h4>
         </div>
     )

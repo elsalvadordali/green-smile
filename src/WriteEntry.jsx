@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 const WriteEntry = ({ promptNumber, goNextPage }) => {
-    let monthEntry = {};
+
+    let singleEntry = {};
     let month = new Date().getMonth().toString();
     let date = new Date().getDate().toString();
 
-    monthEntry[month] = {
+    singleEntry = {
         [date]: {
             promptNumber: 0,
             entry: "",
@@ -13,8 +14,7 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
     };
     let lsEntry = JSON.parse(localStorage.getItem('entry'))
     const [journal, setJournal] = useState(lsEntry ?
-        lsEntry : { ...monthEntry });
-
+        lsEntry : singleEntry);
     localStorage.setItem('entry', JSON.stringify(journal));
     const prompts = [
         `Today I'm proud of...`,
@@ -29,18 +29,21 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
         e.preventDefault()
         goNextPage('select')
     }
+
     function updateJournalEntry(text) {
-        let currentEntry = journal[month][date]
-        currentEntry.entry = text
+        let currentEntry = journal[date];
+        currentEntry.entry = text;
         let newEntry = {
-            ...journal, [month]: { [date]: currentEntry }
-        }
+            ...journal,
+            [date]: currentEntry
+        };
         setJournal(newEntry);
     }
+
     return (
         <form onSubmit={(e) => submit(e)}>
             <h3>{prompts[promptNumber]}</h3>
-            <textarea value={journal[month][date].entry} onChange={(e) => updateJournalEntry(e.target.value)} />
+            <textarea value={journal[date].entry} onChange={(e) => updateJournalEntry(e.target.value)} />
             <button>Give Thanks!</button>
         </form>
     );

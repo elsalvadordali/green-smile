@@ -1,0 +1,46 @@
+.see {
+    position: absolute;
+    height: 80vh;
+    width: 91vw;
+    top: 1.5rem;
+    left: 1rem;
+    background-color: #50808e;
+    border-radius: 1rem;
+    z-index: 100;
+    box-sizing: border-box;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0 black;
+}
+
+.bar {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: #69a297;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
+.padding {
+    padding: 1rem;
+    min-height: 50vh;
+}
+
+.see h5 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-align: left;
+}
+
+.close {
+    background-color: #84b59f;
+    width: fit-content;
+    padding: .25rem .5rem;
+    margin: .5rem;
+}
+
+date {
+    margin: 1rem;
+    font-style: italic;
+
+}

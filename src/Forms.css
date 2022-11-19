@@ -81,12 +81,13 @@ button:active {
 
 .error {
   grid-row-start: 6;
+  color: black
 }
 
 button {
   background: #50808e;
   font-size: 16px;
-  letter-spacing: 0.2rem;
+  letter-spacing: 1px;
   font-weight: bolder;
   color: #ddd8c4;
   text-transform: uppercase;

@@ -5,7 +5,7 @@ import Register from './Register'
 import { useState } from 'react'
 
 const SplashPage = ({ goNextPage, updateUserId }) => {
-  const [showLogin, setLogin] = useState(false)
+  const [showLogin, setLogin] = useState(true)
 
   function toggleLogin() {
     setLogin(!showLogin)

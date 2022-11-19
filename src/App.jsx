@@ -38,12 +38,12 @@ function App() {
   }, [db])
 
   function returnPageFromLocalStorage() {
+
+
     let ls = JSON.parse(localStorage.getItem('entry'))
     if (ls == null && userId) return 'write'
     if (ls == null) return 'login'
-
     if (ls[date]) {
-      console.log(ls[thisDay].plant)
       if (ls[thisDay].plant) return 'garden'
       else if (ls[thisDay].entry) return 'select'
       else if (ls) return 'write'
@@ -56,17 +56,30 @@ function App() {
     }
   }
 
+  function test() {
+    let itBe = {
+      "plot": 12,
+      "plant": "cauliflower",
+      "entry": "hello! It's wonderful that it looks pretty good. don't you think?",
+      "promptNumber": 0
+    }
+    localStorage.setItem('entry', JSON.stringify(itBe))
+
+  }
+
   function returnCurrentPage() {
     if (db) {
-      console.log('db')
       if (db[thisMonth][thisDay]) {
+        console.log('what now???', db[thisMonth][thisDay])
         if (db[thisMonth][thisDay].plant) return 'garden'
-        if (db[thisMonth][thisDay].entry) return 'select'
-      }
-      console.log('ohhh thats why')
-    }
-    return returnPageFromLocalStorage()
+        else if (db[thisMonth][thisDay].entry) return 'select'
+      } else {
+        return returnPageFromLocalStorage()
 
+      }
+    }
+    return 'login'
+    console.log('should be out of react')
   }
 
   function updateUserId(uId) {

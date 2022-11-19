@@ -6,7 +6,7 @@ import SeeEntry from "./SeeEntry";
 const Garden = ({ goNextPage, db }) => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const today = new Date().getDate().toString()
-  const month = new Date().getMonth().toString()
+  const [month, setMonth] = useState(new Date().getMonth().toString())
   let arr = new Array(30).fill(true)
 
   const [showEntry, setSee] = useState(false)
@@ -22,24 +22,28 @@ const Garden = ({ goNextPage, db }) => {
         db[month][today] = entry[today]
         console.log(db)
         writeToFireStore(db, userId)
+        localStorage.setItem('db', JSON.stringify(db))
+        setLs(db)
 
       } else {
-        writeNewDoc(entry, userId)
+        const newDb = {}
+        newDb[month] = entry
+        console.log(newDb, db)
+        writeNewDoc(newDb, userId)
         //db should be empty??
-        console.log(db)
-        localStorage.setItem('db', JSON.stringify({ ...db, entry }))
+        console.log(newDb)
+        localStorage.setItem('db', JSON.stringify(newDb))
+        setLs(newDb)
+
       }
       localStorage.setItem('entry', null)
       ls.entry = null
-      console.log(db)
       //update db and setLS
-      localStorage.setItem('db', JSON.stringify(db))
-      setLs(db)
     }
   }
   function view(entry) {
-    console.log(entry.plant)
-    setSee(<SeeEntry entry={entry} month={month} closeSee={closeSee} />)
+    console.log(entry.plant, today)
+    setSee(<SeeEntry entry={entry} month={month} closeSee={closeSee} date={today} />)
     console.log(showEntry)
   }
   function closeSee() {
@@ -67,14 +71,14 @@ const Garden = ({ goNextPage, db }) => {
     }
   }
   arr = makeArr()
-
+  console.log('LAST MONTH?', month - 1)
   return (
     <div>
       {showEntry}
       <header>
-        <button>{'<'}</button>
+        {ls[month - 1] && <button onClick={() => setMonth(month - 1)}>{'<'}</button>}
         <h3>{months[month]}</h3>
-
+        {ls[month + 1] && <button onClick={() => setMonth(month + 1)}>{'<'}</button>}
       </header>
       <div className="garden">
         {arr}

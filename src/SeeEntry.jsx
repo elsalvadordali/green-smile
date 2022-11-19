@@ -1,12 +1,12 @@
 import './see.css'
 
 
-const SeeEntry = ({ entry, month }) => {
+const SeeEntry = ({ entry, month, date, closeSee }) => {
     const prompts = [
         `You were proud of...`,
         `You were thankfur for...`,
         `You honored yourself by...`,
-        `I grew by...`,
+        `You grew by...`,
         `It was a great day because...`,
         `You smiled because...`,
         `You'll never forget this day because...`
@@ -16,13 +16,13 @@ const SeeEntry = ({ entry, month }) => {
     return (
         <div className="see">
             <div className='bar'>
-                <button class='close'>⨯</button>
+                <button className='close' onClick={() => closeSee()}>⨯</button>
             </div>
             <h5>{prompts[entry.promptNumber]}</h5>
             <div className='padding'>
                 {entry.entry}
             </div>
-            <date>on: {month + '/' + Object.keys(entry)[0]}</date>
+            <p className='date'>on: {month + '/' + date}</p>
         </div>
     )
 }

@@ -38,9 +38,9 @@ function App() {
   }, [db])
 
   function returnPageFromLocalStorage() {
-
-
     let ls = JSON.parse(localStorage.getItem('entry'))
+    console.log(userId, db, ls)
+
     if (ls == null && userId) return 'write'
     if (ls == null) return 'login'
     if (ls[date]) {
@@ -56,19 +56,10 @@ function App() {
     }
   }
 
-  function test() {
-    let itBe = {
-      "plot": 12,
-      "plant": "cauliflower",
-      "entry": "hello! It's wonderful that it looks pretty good. don't you think?",
-      "promptNumber": 0
-    }
-    localStorage.setItem('entry', JSON.stringify(itBe))
-
-  }
-
   function returnCurrentPage() {
+    console.log('checking')
     if (db) {
+      console.log('db yes')
       if (db[thisMonth][thisDay]) {
         console.log('what now???', db[thisMonth][thisDay])
         if (db[thisMonth][thisDay].plant) return 'garden'
@@ -78,12 +69,14 @@ function App() {
 
       }
     }
+    console.log('db no?')
+    return returnPageFromLocalStorage()
     return 'login'
-    console.log('should be out of react')
   }
 
   function updateUserId(uId) {
     //checkPreviousEntry(uId)
+    console.log()
     setUserId(uId)
   }
 

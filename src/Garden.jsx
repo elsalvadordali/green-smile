@@ -1,4 +1,3 @@
-import { setPersistence } from "firebase/auth";
 import { useState } from "react";
 import "./Garden.css";
 import { writeToFireStore, writeNewDoc } from './initFirebase'
@@ -6,17 +5,22 @@ import { writeToFireStore, writeNewDoc } from './initFirebase'
 const Garden = ({ goNextPage, db }) => {
   const ls = JSON.parse(localStorage.getItem('db'))
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const today = new Date().getDate().toString()
   const [month, setMonth] = useState(new Date().getMonth().toString())
+  let arr = new Array(30).fill(true)
 
-  let date = new Date().getDate().toString()
 
   function selectPlot(index) {
     const entry = JSON.parse(localStorage.getItem('entry'))
     if (entry) {
       const userId = localStorage.getItem('userId')
-      entry[month][date].plot = index
+      entry[today].plot = index
       if (db) {
-        writeToFireStore(entry, userId)
+        console.log('DB', db)
+        console.log(entry)
+        db[month][today] = entry
+        console.log('db updated', db)
+        writeToFireStore(db, userId)
 
       } else {
         writeNewDoc(entry, userId)
@@ -32,8 +36,6 @@ const Garden = ({ goNextPage, db }) => {
     goNextPage('seeEntry')
   }
 
-  const today = new Date().getDate()
-  let arr = new Array(30).fill(true)
   if (ls) {
     arr = arr.map((s, index) => {
       for (let entry in ls[month]) {

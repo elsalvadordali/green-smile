@@ -6,10 +6,7 @@ const Plant = ({ plant, updatePlantState, selectedPlant }) => {
 
     function updatePlant(plant) {
         if (updatePlantState) {
-            entry[month][date].plant = plant;
-            console.log(entry)
-
-            console.log('PLANT IS ', entry)
+            entry[date].plant = plant;
             localStorage.setItem('entry', JSON.stringify(entry))
             updatePlantState(plant)
         }

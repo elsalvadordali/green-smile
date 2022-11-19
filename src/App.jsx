@@ -38,16 +38,15 @@ function App() {
   }, [db])
 
   function returnPageFromLocalStorage() {
-    forTesting()
-
     let ls = JSON.parse(localStorage.getItem('entry'))
     if (ls == null && userId) return 'write'
     if (ls == null) return 'login'
 
     if (ls[date]) {
+      console.log(ls[thisDay].plant)
       if (ls[thisDay].plant) return 'garden'
-      if (ls[thisDay].entry) return 'select'
-      if (ls) return 'write'
+      else if (ls[thisDay].entry) return 'select'
+      else if (ls) return 'write'
       return 'login'
     } else {
       ls = null
@@ -57,28 +56,17 @@ function App() {
     }
   }
 
-  function forTesting() {
-    let oldEntry = {
-      "15": {
-        "plot": 1,
-        "plant": "wheat"
-      }
-    }
-    localStorage.setItem('entry', JSON.stringify(oldEntry))
-
-  }
-
-
   function returnCurrentPage() {
     if (db) {
+      console.log('db')
       if (db[thisMonth][thisDay]) {
         if (db[thisMonth][thisDay].plant) return 'garden'
         if (db[thisMonth][thisDay].entry) return 'select'
       }
-      return 'write'
-    } else {
-      return returnPageFromLocalStorage()
+      console.log('ohhh thats why')
     }
+    return returnPageFromLocalStorage()
+
   }
 
   function updateUserId(uId) {

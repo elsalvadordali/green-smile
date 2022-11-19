@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./WriteEntry.css";
 
 const WriteEntry = ({ promptNumber, goNextPage }) => {
 
@@ -42,11 +43,16 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
 
     return (
         <form onSubmit={(e) => submit(e)}>
-            <h3>{prompts[promptNumber]}</h3>
-            <textarea value={journal[date].entry} onChange={(e) => updateJournalEntry(e.target.value)} />
-            <button>Give Thanks!</button>
+            <h3 className="gratitude-prompts">{prompts[promptNumber]}</h3>
+            <textarea
+                className="gratitude-entry"
+                value={journal[date].entry}
+                onChange={(e) => updateJournalEntry(e.target.value)}
+            />
+            <button className="gratitude-button">Give Thanks!</button>
         </form>
     );
+
 };
 
 export default WriteEntry;

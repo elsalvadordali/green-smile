@@ -2,6 +2,8 @@ import './see.css'
 
 
 const SeeEntry = ({ entry, month, date, closeSee }) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    console.log(entry, date)
     const prompts = [
         `You were proud of...`,
         `You were thankful for...`,
@@ -16,13 +18,13 @@ const SeeEntry = ({ entry, month, date, closeSee }) => {
     return (
         <div className="see">
             <div className='bar'>
+                <h6 className='date'>{months[month] + ' ' + date}</h6>
                 <button className='close' onClick={() => closeSee()}>⨯</button>
             </div>
             <h5>{prompts[entry.promptNumber]}</h5>
             <div className='padding'>
                 {entry.entry}
             </div>
-            <p className='date'>on: {month + '/' + date}</p>
         </div>
     )
 }

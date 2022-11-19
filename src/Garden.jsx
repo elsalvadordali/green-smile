@@ -39,10 +39,8 @@ const Garden = ({ goNextPage, db }) => {
       //ls.entry = null
     }
   }
-  function view(entry) {
-    console.log(entry.plant, today)
-    setSee(<SeeEntry entry={entry} month={month} closeSee={closeSee} date={today} />)
-    console.log(showEntry)
+  function view(currMonth, entry) {
+    setSee(<SeeEntry entry={currMonth[entry]} month={month} closeSee={closeSee} date={entry} />)
   }
   function closeSee() {
     setSee(false)
@@ -54,9 +52,10 @@ const Garden = ({ goNextPage, db }) => {
         for (let entry in ls[month]) {
           if (ls[month][entry].plot == index) {
             let stage = Math.min(3, today - entry)
+            console.log(entry)
             let plant = ls[month][entry].plant
             return (
-              <div className='soil' key={index + 1} onClick={() => view(ls[month][entry])}>
+              <div className='soil' key={index + 1} onClick={() => view(ls[month], entry)}>
                 <div className={plant + '-' + stage + ' plant'} ></div>
               </div>
             )

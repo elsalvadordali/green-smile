@@ -18,8 +18,9 @@
     border-top-right-radius: 1rem;
     background-color: #69a297;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .padding {
@@ -38,10 +39,11 @@
     width: fit-content;
     padding: .25rem .5rem;
     margin: .5rem;
+
 }
 
 .date {
     margin: 1rem;
-    font-style: italic;
-
+    font-size: 75%;
+    flex-basis: 80%;
 }

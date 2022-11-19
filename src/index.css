@@ -17,7 +17,7 @@ body {
 
 #root {
   max-width: 465px;
-  min-width: 370px;
+  width: 96%;
 }
 
 .modal {

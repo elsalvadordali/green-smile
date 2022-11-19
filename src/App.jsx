@@ -71,7 +71,6 @@ function App() {
     }
     console.log('db no?')
     return returnPageFromLocalStorage()
-    return 'login'
   }
 
   function updateUserId(uId) {

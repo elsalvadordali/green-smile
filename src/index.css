@@ -2,6 +2,8 @@
 
 /* -------- GARDEN RESPONSIVENESS ----------- */
 html {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-size: 50%;
 
@@ -45,4 +47,15 @@ h6 {
 body,
 p {
   font-family: 'Albert Sans', sans-serif;
+}
+
+input {
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5em;
+}
+
+input[type="password"] {
+  font-size: 1.75rem;
+  letter-spacing: 0.15rem;
 }

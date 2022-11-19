@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import SplashPage from './SplashPage'
 import Login from './Login'
 import WriteEntry from './WriteEntry'
 import SelectPlant from './SelectPlant'
@@ -60,13 +61,13 @@ function App() {
     setUserId(uId)
   }
 
+
   function goNextPage(page) {
     setPage(page)
   }
   return (
-    <div>
-      {page}
-      {page === 'login' && <Login goNextPage={goNextPage} updateUserId={updateUserId} />}
+    <div className="App">
+      {page === 'login' && <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />}
       {page === 'register' && <Register goNextPage={goNextPage} updateUserId={updateUserId} />}
       {page === 'write' && <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />}
       {page === 'select' && <SelectPlant goNextPage={goNextPage} />}

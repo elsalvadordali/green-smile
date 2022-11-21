@@ -1,40 +1,63 @@
-# We got this!
+# Happy Garden
 
-## Running the project
+_Gratitude Gamified_
 
-If you don't have npm installed on your computer, you'll need to google how to get it. 
+A mindfulness app that visualizes the effect of positive thinking through growing a garden.
 
-You're going to want to download pull this repo (or download and extract if that's easier)
+Link to project: [HAPPY GARDEN](https://elsalvadordali.github.io/green-smile/)
 
-then, open a terminal and navigate to the directory where the project is.
+~~Drag and Drop Overview Video here~~
 
-Run the following command to set everything up:
+## Technologies Used:
 
-``` npm install ```
+- Firebase
+- JavaScript
+- TypeScript
+- React
+- Vite
+- HTML
+- CSS
+- Github Pages
+- Discord, Figma
 
-then you can run it with: 
+~~Drag and Drop TechStack Video here~~
 
-``` npm run dev ```
+## Our Goal:
 
-that will start a server and you can see our progress at:
+- Grow a better world with Happy Garden!
+- Daily add a positive thought, a grateful note, or an inspirational phrase to "feed" your plant. As your plant grows, may this daily mindfulness exercise bring some peace and serenity into your hectic life and boost your mood.
+- On days when you don't have anything to add, go back and review past entries for a positive spin to your day.
+- The mind is a powerful tool. Let's use it ito improve our lives and the lives of those around us, one positive entry at a time. Grow your positive mindset!
 
-[http://localhost:5173/](http://localhost:5173/)
+## Product Demo:
 
+~~Drag and Drop Demo Video here~~
 
-## CSS/HTML contributions
+## Takeaways:
 
-please put your project files in the public/parts directory. 
+Happy Garden was built for the GDI Hackathon 2022 - Hack for Health! We were given 48hours to start and accomplish the project.
+All of the team members are first time hackers and it has proven to be challenging, and a rewarding experience for us! The Happy Garden app won and landed thrid place!
+2 days after deployment, it has already garnered almost 100 users!
 
-## React contributors
+Team members are mostly front-end developers and that led us to take different roles and learn new technologies.
 
-Please translate the css/html parts to react. If you need the google firebase api, DM esd, and I'll get it to you :]
+## Planned Features:
 
-Feel free to just use javascript instead of typescript, but if you do, don't forget to change the file extention from ts/tsx to js/jsx
+Happy Garden is open-sourced and contributors are welcomed!
 
+- Desktop optimization
+- Monthly calendar views
+- Previous, Next, and Logout Buttons
+- Additional modals for confirmation
+- More plant options
 
-### Structure
+## Special Thanks to the Original Contributors:
 
-I broke up each screen into files. Most filename are self-explanatory (Login.jsx is the login page), but I wanted to clarify the SeeEntry vs WriteEntry components.
-
-I think we should make them separate because WriteComponent will be a giant textarea that the user edits. Once they post it, I don't think it should be modified, so SeeEntry will just be the text in like <P> or however we style it.
-
+👸🏼 Connect with TJ JUNG on [LinkedIn](https://www.linkedin.com/in/tijaname/) and [GitHub](https://github.com/elsalvadordali)
+👸🏼 Connect with ASTHER MORENO on [LinkedIn](https://www.linkedin.com/in/asthermoreno10/) and [GitHub](https://github.com/AshM10)
+👸🏼 Connect with ELISE GRIFFIN on [LinkedIn](https://www.linkedin.com/in/elise-griffin-598654214/) and [GitHub](https://github.com/nzgriffin)
+👸🏼 Connect with JODI KIDNEIGH on [LinkedIn]() and [GitHub](https://github.com/JodiKidneigh)
+👸🏼 Connect with EMILY LIN on [LinkedIn]() and [GitHub]()
+👸🏼 Connect with JOLENE KEARSE on [LinkedIn](https://www.linkedin.com/in/jolene-kearse-2562ba218/) and [GitHub](https://github.com/JoleneKearse)
+👸🏼 Connect with LE PHAM on [LinkedIn]() and [GitHub](https://github.com/leTpham)
+👸🏼 Connect with EMPATH LIFE on [LinkedIn]() and [GitHub]()

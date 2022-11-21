@@ -43,7 +43,7 @@ Team members are mostly front-end developers and that led us to take different r
 
 ## Planned Features:
 
-Happy Garden is open-sourced and <a href="./Contribute.md">Link to the folder</a> are welcome!
+Happy Garden is open-sourced and <a href="./Contribute.md">Contirbutors</a> are welcome!
 
 - Desktop optimization
 - Monthly calendar views

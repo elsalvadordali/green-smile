@@ -64,9 +64,8 @@ git push origin <your_branch_name>
 
 ### Step 5: Create Pull Request
 
-Now visit `green-smile` repository which you forked.
+Now visit `green-smile` repository.
 
-- Click on where it says `X commit ahead`
 - To create a pull request, click on `Create pull request`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
 - Add appropriate title and description to your pull request explaining your changes and efforts done. Best practice is to include an image of the changes that were made if changes were visual.
 - Click on `Create Pull Request`.

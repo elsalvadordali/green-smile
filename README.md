@@ -43,7 +43,7 @@ Team members are mostly front-end developers and that led us to take different r
 
 ## Planned Features:
 
-Happy Garden is open-sourced and contributors are welcomed!
+Happy Garden is open-sourced and <a href="./Contribute.md">Link to the folder</a> are welcome!
 
 - Desktop optimization
 - Monthly calendar views
@@ -53,11 +53,11 @@ Happy Garden is open-sourced and contributors are welcomed!
 
 ## Special Thanks to the Original Contributors:
 
-👸🏼 Connect with TJ JUNG on [LinkedIn](https://www.linkedin.com/in/tijaname/) and [GitHub](https://github.com/elsalvadordali)
-👸🏼 Connect with ASTHER MORENO on [LinkedIn](https://www.linkedin.com/in/asthermoreno10/) and [GitHub](https://github.com/AshM10)
-👸🏼 Connect with ELISE GRIFFIN on [LinkedIn](https://www.linkedin.com/in/elise-griffin-598654214/) and [GitHub](https://github.com/nzgriffin)
-👸🏼 Connect with JODI KIDNEIGH on [LinkedIn]() and [GitHub](https://github.com/JodiKidneigh)
-👸🏼 Connect with EMILY LIN on [LinkedIn]() and [GitHub]()
-👸🏼 Connect with JOLENE KEARSE on [LinkedIn](https://www.linkedin.com/in/jolene-kearse-2562ba218/) and [GitHub](https://github.com/JoleneKearse)
-👸🏼 Connect with LE PHAM on [LinkedIn]() and [GitHub](https://github.com/leTpham)
-👸🏼 Connect with EMPATH LIFE on [LinkedIn]() and [GitHub]()
+- 👸🏼 Connect with TJ JUNG on [LinkedIn](https://www.linkedin.com/in/tijaname/) and [GitHub](https://github.com/elsalvadordali)
+- 👸🏼 Connect with ASTHER MORENO on [LinkedIn](https://www.linkedin.com/in/asthermoreno10/) and [GitHub](https://github.com/AshM10)
+- 👸🏼 Connect with ELISE GRIFFIN on [LinkedIn](https://www.linkedin.com/in/elise-griffin-598654214/) and [GitHub](https://github.com/nzgriffin)
+- 👸🏼 Connect with JODI KIDNEIGH on [LinkedIn]() and [GitHub](https://github.com/JodiKidneigh)
+- 👸🏼 Connect with EMILY LIN on [LinkedIn]() and [GitHub]()
+- 👸🏼 Connect with JOLENE KEARSE on [LinkedIn](https://www.linkedin.com/in/jolene-kearse-2562ba218/) and [GitHub](https://github.com/JoleneKearse)
+- 👸🏼 Connect with LE PHAM on [LinkedIn]() and [GitHub](https://github.com/leTpham)
+- 👸🏼 Connect with EMPATH LIFE on [LinkedIn]() and [GitHub]()

@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./WriteEntry.css";
 
 const WriteEntry = ({ promptNumber, goNextPage }) => {
-
     let singleEntry = {};
     let month = new Date().getMonth().toString();
     let date = new Date().getDate().toString();
@@ -26,6 +25,8 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
         `Today I smiled because...`,
         `I'll never forget today because...`
     ];
+    const [selectedPrompt, setPrompt] = useState(Math.floor(Math.random() * prompts.length))
+    const [seeDropdown, setDropdown] = useState(false)
     function submit(e) {
         e.preventDefault()
         goNextPage('select')
@@ -43,7 +44,19 @@ const WriteEntry = ({ promptNumber, goNextPage }) => {
 
     return (
         <form onSubmit={(e) => submit(e)}>
-            <h3 className="gratitude-prompts">{prompts[promptNumber]}</h3>
+            {selectedPrompt}
+            <div className="dropdown" onClick={() => setDropdown(!seeDropdown)}>
+            <h3 className="gratitude-prompts">{prompts[selectedPrompt]}</h3>
+            <p className="tiny">(See prompts)</p>
+
+            {seeDropdown && 
+            <div className="list">
+                {seeDropdown && 
+                prompts.map((p, i) => <div key={'prompt-' + 1} onClick={() => setPrompt(i)}><p>{p}</p></div>)
+            }
+            </div>
+             }
+            </div>
             <textarea
                 className="gratitude-entry"
                 value={journal[date].entry}

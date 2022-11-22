@@ -4,14 +4,13 @@
 
 .gratitude-entry {
   border: 2px solid black;
-  background-color: #ddd8c4;
+  background-color: #84b59f;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
   box-shadow: 2px 2px 0 #000;
   outline: 0;
   margin: 1rem 0;
   width: 100%;
-  max-width: 360px;
   box-sizing: border-box;
   height: 60vh;
   font-family: "Albert Sans", sans-serif;
@@ -20,4 +19,53 @@
 .gratitude-button {
   width: 70%;
   letter-spacing: 1px;
+}
+
+.tiny, .dropdown p {
+  color: #000;
+}
+
+.dropdown {
+  border-radius: 1rem;
+  background-color: #ddd8c4;
+  padding:1rem;
+}
+
+.dropdown p {
+  font-size: 1rem;
+  width: fit-content;
+  margin-inline: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown .list div {
+  text-align: left;
+  margin-inline: inherit;
+  margin: 1rem;
+  border-bottom: 2px solid gray;
+  padding-bottom: .5rem;
+}
+.dropdown .list div:last-of-type {
+  border-bottom: none;
+  padding-bottom: none;
+}
+
+.dropdown .tiny {
+  font-size: 12px;
+  margin: 1rem;
+  margin-inline: auto;
+}
+.list {
+  border: 2px solid black;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 0 black;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 0 black;
 }

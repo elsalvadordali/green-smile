@@ -20,7 +20,7 @@ Link to project: [HAPPY GARDEN](https://elsalvadordali.github.io/green-smile/)
 - Github Pages
 - Discord, Figma
 
-~~Drag and Drop TechStack Video here~~
+[![Tech Stack](./images/hg-techstack.png)](https://youtu.be/LPeEEpkY610)
 
 ## Our Goal:
 
@@ -32,18 +32,19 @@ Link to project: [HAPPY GARDEN](https://elsalvadordali.github.io/green-smile/)
 ## Product Demo:
 
 ~~Drag and Drop Demo Video here~~
+[![Demo](./images/hg-demo.png)](https://youtu.be/e9GxeP1PMg0)
 
 ## Takeaways:
 
-Happy Garden was built for the GDI Hackathon 2022 - Hack for Health! We were given 48hours to start and accomplish the project.
-All of the team members are first time hackers and it has proven to be challenging, and a rewarding experience for us! The Happy Garden app won and landed thrid place!
+Happy Garden was built for the GDI Hackathon 2022 - Hack for Health! We were given 48 hours to start and accomplish the project.
+All team members are first-time hackers, which has proven to be challenging and a rewarding experience for us! The Happy Garden app won and landed third place!
 2 days after deployment, it has already garnered almost 100 users!
 
-Team members are mostly front-end developers and that led us to take different roles and learn new technologies.
+Team members are mostly front-end developers, leading us to take on different roles and learn new technologies.
 
 ## Planned Features:
 
-Happy Garden is open-sourced and <a href="./Contribute.md">Contirbutors</a> are welcome!
+Happy Garden is open-source and <a href="./Contribute.md">Contributors</a> are welcome!
 
 - Desktop optimization
 - Monthly calendar views
@@ -59,5 +60,5 @@ Happy Garden is open-sourced and <a href="./Contribute.md">Contirbutors</a> are 
 - 👸🏼 Connect with JODI KIDNEIGH on [LinkedIn]() and [GitHub](https://github.com/JodiKidneigh)
 - 👸🏼 Connect with EMILY LIN on [LinkedIn]() and [GitHub]()
 - 👸🏼 Connect with JOLENE KEARSE on [LinkedIn](https://www.linkedin.com/in/jolene-kearse-2562ba218/) and [GitHub](https://github.com/JoleneKearse)
-- 👸🏼 Connect with LE PHAM on [LinkedIn]() and [GitHub](https://github.com/leTpham)
+- 👸🏼 Connect with LE PHAM on [LinkedIn](https://www.linkedin.com/in/letpham/) and [GitHub](https://github.com/leTpham)
 - 👸🏼 Connect with EMPATH LIFE on [LinkedIn]() and [GitHub]()

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import SplashPage from './SplashPage'
-import Login from './Login'
-import WriteEntry from './WriteEntry'
-import SelectPlant from './SelectPlant'
-import Garden from './Garden'
-import SeeEntry from './SeeEntry'
-import Register from './Register'
-import { getMonth } from "./initFirebase";
 
+// Database
+import { getMonth } from './initFirebase'
+
+// Components
+import SplashPage from './Components/SplashPage'
+import WriteEntry from './Components/WriteEntry'
+import SelectPlant from './Components/SelectPlant'
+import Garden from './Components/Garden'
+import SeeEntry from './Components/SeeEntry'
+import Register from './Components/Register'
 
 function App() {
   const [page, setPage] = useState(null)
@@ -34,7 +36,6 @@ function App() {
     if (db) {
     }
     setPage(returnCurrentPage())
-
   }, [db])
 
   function returnPageFromLocalStorage() {
@@ -66,7 +67,6 @@ function App() {
         else if (db[thisMonth][thisDay].entry) return 'select'
       } else {
         return returnPageFromLocalStorage()
-
       }
     }
     console.log('db no?')
@@ -79,21 +79,29 @@ function App() {
     setUserId(uId)
   }
 
-
   function goNextPage(page) {
     setPage(page)
   }
   return (
-    <div className="App">
-      {page === 'login' && <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />}
-      {page === 'register' && <Register goNextPage={goNextPage} updateUserId={updateUserId} />}
-      {page === 'write' && <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />}
+    <div className='App'>
+      {page === 'login' && (
+        <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />
+      )}
+      {page === 'register' && (
+        <Register goNextPage={goNextPage} updateUserId={updateUserId} />
+      )}
+      {page === 'write' && (
+        <WriteEntry
+          goNextPage={goNextPage}
+          userId={userId}
+          promptNumber={Math.floor(Math.random() * 7)}
+        />
+      )}
       {page === 'select' && <SelectPlant goNextPage={goNextPage} />}
       {page === 'garden' && <Garden goNextPage={goNextPage} db={db} />}
       {page === 'see' && <SeeEntry goNextPage={goNextPage} />}
     </div>
   )
-
 }
 
-export default App;
+export default App

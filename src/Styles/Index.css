@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital@0;1&family=DM+Serif+Display&display=swap');
 
 /* -------- GARDEN RESPONSIVENESS ----------- */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 1rem;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 #root {
   max-width: 465px;
@@ -22,30 +9,31 @@ body {
 
 .modal {
   position: fixed;
-  width: 88vw;
-  height: 60vh;
-  top: 15vh;
+  left: 50%;
+  top: 50%;
+  padding: 2em;
+  transform: translate(-50%, -50%);
   background-color: #ddd8c4;
-  left: 6vw;
   border: 2px solid black;
-  border-radius: 1rem;
+  border-radius: 1em;
   box-shadow: 2px 2px 0 black;
+  backdrop-filter: blur(5px);
 }
 
 .modal button {
   width: fit-content;
-  margin-top: 2rem;
+  margin-top: 2em;
 }
 
 .row {
   display: flex;
   flex: row nowrap;
   justify-content: space-evenly;
+  gap: 10px;
 }
 
-
 form {
-  padding: 1rem;
+  padding: 1em;
 }
 
 h1,
@@ -63,7 +51,7 @@ h2 {
 
 h3 {
   font-size: 2.5rem;
-  margin: .5rem
+  margin: 0.5rem;
 }
 
 body,
@@ -71,10 +59,8 @@ p {
   font-family: 'Albert Sans', sans-serif;
 }
 
-
-
-input[type="password"] {
+input[type='password'] {
   font-size: 1.5rem;
-  padding: .5rem .675rem;
+  padding: 0.5rem 0.675rem;
   letter-spacing: 0.15rem;
 }

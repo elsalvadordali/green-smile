@@ -14,7 +14,7 @@ h1 span {
 h2 {
   margin-bottom: 1rem;
   text-align: center;
-  font-family: "Albert Sans", sans-serif;
+  font-family: 'Albert Sans', sans-serif;
   letter-spacing: 0.2rem;
   grid-column-start: 1;
   grid-column-end: 3;
@@ -81,7 +81,7 @@ button:active {
 
 .error {
   grid-row-start: 6;
-  color: black
+  color: black;
 }
 
 button {

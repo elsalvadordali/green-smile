@@ -1,4 +1,18 @@
-html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #a3c9a8;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
 }

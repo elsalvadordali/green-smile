@@ -6,7 +6,7 @@ A mindfulness app that visualizes the effect of positive thinking through growin
 
 Link to project: [HAPPY GARDEN](https://elsalvadordali.github.io/green-smile/)
 
-~~Drag and Drop Overview Video here~~
+[![Overview](<img src="./images/hg.overview.png" />)](https://youtu.be/Pv69FrhKARg)
 
 ## Technologies Used:
 

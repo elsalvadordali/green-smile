@@ -31,7 +31,6 @@ Link to project: [HAPPY GARDEN](https://elsalvadordali.github.io/green-smile/)
 
 ## Product Demo:
 
-~~Drag and Drop Demo Video here~~
 [![Demo](./images/hg-demo.png)](https://youtu.be/e9GxeP1PMg0)
 
 ## Takeaways:

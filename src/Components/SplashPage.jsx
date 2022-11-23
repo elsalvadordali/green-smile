@@ -1,5 +1,5 @@
 import React from 'react'
-import './SplashPage.css'
+import '../Styles/SplashPage.css'
 import Login from './Login'
 import Register from './Register'
 import { useState } from 'react'

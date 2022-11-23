@@ -4,19 +4,18 @@
   background-color: #69a297;
   margin-bottom: 5rem;
   text-align: center;
-
 }
 
 .splash p {
   text-align: left;
   margin-left: 1.5rem;
   border-left: 2px solid #ddd8c4;
-  padding: 1.5rem
+  padding: 1.5rem;
 }
 
 h1 {
   margin-bottom: 0;
-  font-size: clamp(3rem, 0.7500rem + 10.0000vw, 6rem);
+  font-size: clamp(3rem, 0.75rem + 10vw, 6rem);
   color: #ddd8c4;
   text-align: center;
 }
@@ -28,7 +27,7 @@ span {
 
 p {
   margin-inline: auto;
-  font-size: clamp(1.25rem, 0.8750rem + 1.6667vw, 1.75rem);
+  font-size: clamp(1.25rem, 0.875rem + 1.6667vw, 1.75rem);
   color: #ddd8c4;
   line-height: 1.5;
 }
@@ -53,7 +52,6 @@ p {
 .logo {
   background: url('https://our-farm-game.s3.us-west-1.amazonaws.com/cropped/logo.png');
   background-size: 180px auto;
-
 }
 
 .auth h2 {
@@ -68,6 +66,6 @@ p {
   width: fit-content;
   text-transform: none;
   text-decoration: underline;
-  padding: 0 .25rem;
-  margin: .25rem .25rem .75rem;
+  padding: 0 0.25rem;
+  margin: 0.25rem 0.25rem 0.75rem;
 }

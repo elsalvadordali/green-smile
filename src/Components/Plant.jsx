@@ -1,4 +1,5 @@
 import '../Styles/Plant.css'
+
 const Plant = ({ plant, updatePlantState, selectedPlant }) => {
   let date = new Date().getDate().toString()
   const entry = JSON.parse(localStorage.getItem('entry'))

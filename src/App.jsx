@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-
-// Database
-import { getMonth } from './initFirebase'
-
-// Components
 import SplashPage from './Components/SplashPage'
 import WriteEntry from './Components/WriteEntry'
 import SelectPlant from './Components/SelectPlant'
 import Garden from './Components/Garden'
 import SeeEntry from './Components/SeeEntry'
 import Register from './Components/Register'
+import Loading from './Components/Loading'
+import { getMonth } from "./initFirebase";
+
 
 function App() {
   const [page, setPage] = useState(null)
@@ -18,6 +16,7 @@ function App() {
   const [date, setDate] = useState(new Date().getDate().toString())
   const [db, setDB] = useState(null)
 
+  const thisYear = new Date().getFullYear()
   const thisMonth = new Date().getMonth()
   const thisDay = new Date().getDate()
 
@@ -36,18 +35,18 @@ function App() {
     if (db) {
     }
     setPage(returnCurrentPage())
+
   }, [db])
 
   function returnPageFromLocalStorage() {
-    let ls = JSON.parse(localStorage.getItem('entry'))
-    console.log(userId, db, ls)
+    let lsEntry = JSON.parse(localStorage.getItem('entry'))
 
-    if (ls == null && userId) return 'write'
-    if (ls == null) return 'login'
-    if (ls[date]) {
-      if (ls[thisDay].plant) return 'garden'
-      else if (ls[thisDay].entry) return 'select'
-      else if (ls) return 'write'
+    if (lsEntry == null && userId) return 'write'
+    if (lsEntry == null) return 'login'
+    if (lsEntry[date]) {
+      if (lsEntry[thisDay].plant) return 'garden'
+      else if (lsEntry[thisDay].entry) return 'select'
+      else if (lsEntry) return 'write'
       return 'login'
     } else {
       ls = null
@@ -58,50 +57,43 @@ function App() {
   }
 
   function returnCurrentPage() {
-    console.log('checking')
     if (db) {
-      console.log('db yes')
-      if (db[thisMonth][thisDay]) {
-        console.log('what now???', db[thisMonth][thisDay])
+      if (db[thisYear] && db[thisYear][thisMonth] && db[thisYear][thisMonth][thisDay]) {
+        if (db[thisYear][thisMonth][thisDay].plant) return 'garden'
+        else if (db[thisYear][thisMonth][thisDay].entry) return 'select'
+      } else if (db[thisMonth] && db[thisMonth][thisDay]) {
         if (db[thisMonth][thisDay].plant) return 'garden'
         else if (db[thisMonth][thisDay].entry) return 'select'
-      } else {
+      }
+      else {
         return returnPageFromLocalStorage()
+
       }
     }
-    console.log('db no?')
     return returnPageFromLocalStorage()
   }
 
   function updateUserId(uId) {
     //checkPreviousEntry(uId)
-    console.log()
     setUserId(uId)
   }
+
 
   function goNextPage(page) {
     setPage(page)
   }
-  return (
-    <div className='App'>
-      {page === 'login' && (
-        <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />
-      )}
-      {page === 'register' && (
-        <Register goNextPage={goNextPage} updateUserId={updateUserId} />
-      )}
-      {page === 'write' && (
-        <WriteEntry
-          goNextPage={goNextPage}
-          userId={userId}
-          promptNumber={Math.floor(Math.random() * 7)}
-        />
-      )}
-      {page === 'select' && <SelectPlant goNextPage={goNextPage} />}
-      {page === 'garden' && <Garden goNextPage={goNextPage} db={db} />}
-      {page === 'see' && <SeeEntry goNextPage={goNextPage} />}
-    </div>
-  )
+
+
+  if (page === 'login') return <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />
+  if (page === 'register') return <Register goNextPage={goNextPage} updateUserId={updateUserId} />
+  if (page === 'write') return <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />
+  if (page === 'select') return <SelectPlant goNextPage={goNextPage} />
+  if (page === 'garden') return <Garden goNextPage={goNextPage} db={db} />
+  if (page === 'see') return <SeeEntry goNextPage={goNextPage} />
+  return <Loading />
+
+
+
 }
 
-export default App
+export default App;

@@ -17,6 +17,8 @@
   flex-flow: column nowrap;
   justify-content: flex-end;
   height: calc(66vh / 6);
+  width: 60px;
+  max-width: calc(90vw / 5);
 }
 
 .soil:hover {

@@ -1,55 +1,70 @@
 import { useState } from 'react'
-import '../Styles/Garden.css'
-import { writeToFireStore, writeNewDoc } from '../initFirebase'
+import { writeNewDoc } from '../initFirebase'
 import SeeEntry from './SeeEntry'
+import '../Styles/Garden.css'
 
 const Garden = ({ db }) => {
   const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
+    'January',
+    'February',
+    'March',
+    'April',
     'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ]
-  const today = new Date().getDate().toString()
+  const YEAR = new Date().getFullYear().toString()
+  const TODAY = new Date().getDate().toString()
   const [month, setMonth] = useState(new Date().getMonth().toString())
   let arr = new Array(30).fill(true)
-
   const [showEntry, setSee] = useState(false)
   const [ls, setLs] = useState(
     localStorage.getItem('db') ? JSON.parse(localStorage.getItem('db')) : null
   )
 
+  function createNewDB(entry) {
+    const newDb = {}
+    newDb[YEAR] = {}
+    newDb[YEAR][month] = {}
+    newDb[YEAR][month][TODAY] = entry[TODAY]
+    writeNewDoc(newDb, userId)
+    localStorage.setItem('db', JSON.stringify(newDb))
+    setLs(newDb)
+  }
+
   function selectPlot(index) {
     const entry = JSON.parse(localStorage.getItem('entry'))
-    console.log('ENTRYYYY', entry)
-    if (entry && entry[today].entry) {
+    if (entry && entry[TODAY].entry) {
       const userId = localStorage.getItem('userId')
-      entry[today].plot = index
+      entry[TODAY].plot = index
+
       if (db) {
-        console.log('old DB')
-        db[month][today] = entry[today]
-        writeToFireStore(db, userId)
-        localStorage.setItem('db', JSON.stringify(db))
-        setLs(db)
+        //is it month or year? Month:
+        if (Object.keys(db)[0] < 12) {
+          const newStyle = {}
+          newStyle[YEAR] = db
+
+          if (!newStyle[YEAR][month]) newStyle[YEAR][month] = {}
+          newStyle[YEAR][month][TODAY] = entry
+          localStorage.setItem('db', JSON.stringify({ ...db[YEAR] }))
+          writeNewDoc(newStyle, userId)
+        } else {
+          //year exists but month might not
+          if (!db[YEAR][month]) db[YEAR][month] = {}
+          db[YEAR][month][TODAY] = entry[TODAY]
+          writeNewDoc(db, userId)
+          localStorage.setItem('db', JSON.stringify({ ...db[YEAR] }))
+          setLs(db)
+        }
       } else {
-        const newDb = {}
-        newDb[month] = {}
-        newDb[month][today] = entry[today]
-        console.log('NEW DB', newDb)
-        writeNewDoc(newDb, userId)
-        localStorage.setItem('db', JSON.stringify(newDb))
-        setLs(newDb)
+        createNewDB(entry)
       }
       localStorage.setItem('entry', null)
-      console.log(ls)
       //ls.entry = null
     }
   }
@@ -69,17 +84,19 @@ const Garden = ({ db }) => {
 
   function makeArr() {
     if (ls) {
+      const entryArray = ls[YEAR] ? ls[YEAR][month] : ls[month]
+      console.log('ENTRY ARRAY', entryArray)
       return arr.map((s, index) => {
-        for (let entry in ls[month]) {
-          if (ls[month][entry].plot == index) {
-            let stage = Math.min(3, today - entry)
-            console.log(entry)
-            let plant = ls[month][entry].plant
+        for (let entryIndex in entryArray) {
+          console.log(entryIndex, entryArray[entryIndex])
+          if (entryArray[entryIndex].plot == index) {
+            let stage = Math.min(3, TODAY - entryIndex)
+            let plant = entryArray[entryIndex].plant
             return (
               <div
                 className='soil'
                 key={index + 1}
-                onClick={() => view(ls[month], entry)}
+                onClick={() => view(ls[month], entryIndex)}
               >
                 <div className={plant + '-' + stage + ' plant'}></div>
               </div>
@@ -105,6 +122,7 @@ const Garden = ({ db }) => {
     }
   }
   arr = makeArr()
+
   return (
     <div>
       {showEntry}

@@ -43,7 +43,6 @@ const SelectPlant = ({ goNextPage }) => {
       : `Are you sure you want to plant a(n) ${selectedPlant}?`
   return (
     <div onClick={() => setModal(false)}>
-      {modalOpen}
       <h5>Select a plant</h5>
       <div className='grid'>
         {plants.map((p) => (

@@ -49,7 +49,7 @@ function App() {
       else if (lsEntry) return 'write'
       return 'login'
     } else {
-      ls = null
+      lsEntry = null
       localStorage.setItem('entry', null)
       if (userId) return 'write'
       return 'login'

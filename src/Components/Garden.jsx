@@ -96,7 +96,7 @@ const Garden = ({ db }) => {
               <div
                 className='soil'
                 key={index + 1}
-                onClick={() => view(ls[month], entryIndex)}
+                onClick={() => view(entryArray, entryIndex)}
               >
                 <div className={plant + '-' + stage + ' plant'}></div>
               </div>

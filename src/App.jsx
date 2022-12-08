@@ -20,8 +20,10 @@ function App() {
   const thisMonth = new Date().getMonth()
   const thisDay = new Date().getDate()
 
-  useEffect(() => {
-    if (userId) {
+
+  if (userId) {
+    if (!db) {
+      console.log('previously useEffect')
       async function fetchDB() {
         let res = await getMonth(userId)
         localStorage.setItem('db', JSON.stringify(res))
@@ -29,18 +31,15 @@ function App() {
       }
       fetchDB()
     }
-  }, [userId])
+  }
 
   useEffect(() => {
-    if (db) {
-    }
-    setPage(returnCurrentPage())
-
+    if (db) setPage(returnCurrentPage())
   }, [db])
 
   function returnPageFromLocalStorage() {
     let lsEntry = JSON.parse(localStorage.getItem('entry'))
-
+    console.log('returnPageFromLS')
     if (lsEntry == null && userId) return 'write'
     if (lsEntry == null) return 'login'
     if (lsEntry[date]) {
@@ -57,18 +56,13 @@ function App() {
   }
 
   function returnCurrentPage() {
-    if (db) {
-      if (db[thisYear] && db[thisYear][thisMonth] && db[thisYear][thisMonth][thisDay]) {
-        if (db[thisYear][thisMonth][thisDay].plant) return 'garden'
-        else if (db[thisYear][thisMonth][thisDay].entry) return 'select'
-      } else if (db[thisMonth] && db[thisMonth][thisDay]) {
-        if (db[thisMonth][thisDay].plant) return 'garden'
-        else if (db[thisMonth][thisDay].entry) return 'select'
-      }
-      else {
-        return returnPageFromLocalStorage()
 
-      }
+    if (db[thisYear] && db[thisYear][thisMonth] && db[thisYear][thisMonth][thisDay]) {
+      if (db[thisYear][thisMonth][thisDay].plant) return 'garden'
+      else if (db[thisYear][thisMonth][thisDay].entry) return 'select'
+    } else if (db[thisMonth] && db[thisMonth][thisDay]) {
+      if (db[thisMonth][thisDay].plant) return 'garden'
+      else if (db[thisMonth][thisDay].entry) return 'select'
     }
     return returnPageFromLocalStorage()
   }
@@ -78,11 +72,9 @@ function App() {
     setUserId(uId)
   }
 
-
   function goNextPage(page) {
     setPage(page)
   }
-
 
   if (page === 'login') return <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />
   if (page === 'register') return <Register goNextPage={goNextPage} updateUserId={updateUserId} />
@@ -91,8 +83,6 @@ function App() {
   if (page === 'garden') return <Garden goNextPage={goNextPage} db={db} />
   if (page === 'see') return <SeeEntry goNextPage={goNextPage} />
   return <Loading />
-
-
 
 }
 

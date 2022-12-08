@@ -15,7 +15,6 @@ const SeeEntry = ({ entry, month, date, closeSee }) => {
     'Nov',
     'Dec',
   ]
-  console.log(entry, date)
   const prompts = [
     `You were proud of...`,
     `You were thankful for...`,
@@ -26,7 +25,6 @@ const SeeEntry = ({ entry, month, date, closeSee }) => {
     `You'll never forget this day because...`,
   ]
 
-  console.log(entry)
   return (
     <div className='see'>
       <div className='bar'>

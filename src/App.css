@@ -11,6 +11,7 @@ body {
   background-color: #a3c9a8;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
+  color-scheme: light dark;
 }
 
 button {

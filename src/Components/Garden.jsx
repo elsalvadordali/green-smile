@@ -4,7 +4,7 @@ import SeeEntry from './SeeEntry'
 import '../Styles/Garden.css'
 
 const Garden = ({ db }) => {
-  console.log('GARDEN DB', db)
+  console.log('WHAT IS GOING ON', db) // 2023 DOESNT EXIST SO ERROR
   const months = [
     'January',
     'February',
@@ -22,7 +22,6 @@ const Garden = ({ db }) => {
   const YEAR = new Date().getFullYear().toString()
   const TODAY = new Date().getDate().toString()
   const [month, setMonth] = useState(new Date().getMonth().toString())
-  console.log('CURRENT MONTH IS', month)
   let arr = new Array(30).fill(true)
   const [showEntry, setSee] = useState(false)
   const [ls, setLs] = useState(
@@ -57,8 +56,15 @@ const Garden = ({ db }) => {
           writeNewDoc(newStyle, userId)
         } else {
           //year exists but month might not
-          if (!db[YEAR][month]) db[YEAR][month] = {}
-          db[YEAR][month][TODAY] = entry[TODAY]
+          if (db[YEAR]) {// YEAR EXISTS BUT NOT MONTH
+            if (!db[YEAR][month]) db[YEAR][month] = {}
+            db[YEAR][month][TODAY] = entry[TODAY]
+          } else {
+            db[YEAR] = {}
+            db[YEAR][month] = {}
+            db[YEAR][month][TODAY] = entry[TODAY]
+          }
+
           writeNewDoc(db, userId)
           localStorage.setItem('db', JSON.stringify({ ...db[YEAR] }))
           setLs(db)
@@ -87,14 +93,11 @@ const Garden = ({ db }) => {
   function makeArr() {
     if (ls) {
       const entryArray = ls[YEAR] ? ls[YEAR][month] : ls[month]
-      console.log(entryArray)
       return arr.map((s, index) => {
         for (let entryIndex in entryArray) {
           if (entryArray[entryIndex].plot == index) {
-            console.log('PLOT IS A MATCH', entryArray[entryIndex].plot, index)
             let stage = Math.min(3, TODAY - entryIndex)
             let plant = entryArray[entryIndex].plant
-            console.log('returning A PLANT')
             return (
               <div
                 className='soil'
@@ -104,8 +107,6 @@ const Garden = ({ db }) => {
                 <div className={plant + '-' + stage + ' plant'}></div>
               </div>
             )
-          } else {
-            console.log('not a match')
           }
         }
         return (
@@ -127,13 +128,11 @@ const Garden = ({ db }) => {
     }
   }
   arr = makeArr()
-  console.log(arr, 'ARR IS')
   return (
     <div>
       {showEntry}
       <header>
-        {console.log('LS IS', ls)}
-        {ls[YEAR][month - 1] && (
+        {ls[YEAR] && ls[YEAR][month - 1] && (
           <button onClick={() => setMonth(month - 1)}>{'<'}</button>
         )}
         <h3>{months[month]}</h3>

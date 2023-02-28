@@ -27,7 +27,6 @@ const Login = ({ updateUserId, toggleLogin }) => {
       localStorage.setItem('userId', res.user.uid)
       updateUserId(res.user.uid)
     } else {
-      console.log('ERROR LOGGING IN', typeof res.code)
       setErrMessage(res.code)
     }
   }

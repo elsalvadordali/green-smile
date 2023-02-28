@@ -11,79 +11,61 @@ import { getMonth } from "./initFirebase";
 
 
 function App() {
-  const [page, setPage] = useState(null)
-  const [userId, setUserId] = useState(localStorage.getItem('userId') || null)
-  const [date, setDate] = useState(new Date().getDate().toString())
-  const [db, setDB] = useState(null)
+    const [page, setPage] = useState(null)
+    const [userId, setUserId] = useState(localStorage.getItem('userId') || null)
+    //const [date, setDate] = useState(new Date().getDate().toString())
+    const [db, setDB] = useState(undefined)
 
-  const thisYear = new Date().getFullYear()
-  const thisMonth = new Date().getMonth()
-  const thisDay = new Date().getDate()
+    const thisYear = new Date().getFullYear().toString()
+    const thisMonth = new Date().getMonth().toString()
+    const thisDay = new Date().getDate().toString()
 
-
-  if (userId) {
-    if (!db) {
-      console.log('previously useEffect')
-      async function fetchDB() {
+    async function fetchDB() {
         let res = await getMonth(userId)
         localStorage.setItem('db', JSON.stringify(res))
         setDB(res)
-      }
-      fetchDB()
     }
-  }
 
-  useEffect(() => {
-    if (db) setPage(returnCurrentPage())
-  }, [db])
+    useEffect(() => {
+        console.log('fetching db')
+        fetchDB()
 
-  function returnPageFromLocalStorage() {
-    let lsEntry = JSON.parse(localStorage.getItem('entry'))
-    console.log('returnPageFromLS')
-    if (lsEntry == null && userId) return 'write'
-    if (lsEntry == null) return 'login'
-    if (lsEntry[date]) {
-      if (lsEntry[thisDay].plant) return 'garden'
-      else if (lsEntry[thisDay].entry) return 'select'
-      else if (lsEntry) return 'write'
-      return 'login'
-    } else {
-      lsEntry = null
-      localStorage.setItem('entry', null)
-      if (userId) return 'write'
-      return 'login'
+    }, [])
+
+    useEffect(() => {
+        console.log('DB', db)
+        setPage(returnPage())
+        console.log('page is', page)
+    }, [db])
+
+    function goNextPage(page) {
+        setPage(page)
     }
-  }
 
-  function returnCurrentPage() {
+    const entry = JSON.parse(localStorage.getItem('entry'))
 
-    if (db[thisYear] && db[thisYear][thisMonth] && db[thisYear][thisMonth][thisDay]) {
-      if (db[thisYear][thisMonth][thisDay].plant) return 'garden'
-      else if (db[thisYear][thisMonth][thisDay].entry) return 'select'
-    } else if (db[thisMonth] && db[thisMonth][thisDay]) {
-      if (db[thisMonth][thisDay].plant) return 'garden'
-      else if (db[thisMonth][thisDay].entry) return 'select'
+    function returnPage() {
+        console.log('owg')
+        if (userId) {
+            if (db == undefined) return 'loading'
+            if (db && db[thisYear] && db[thisYear][thisMonth] && db[thisYear][thisMonth][thisDay]) {
+                return 'garden'
+            }
+            if (entry) {
+                if (entry[thisDay].plant) return 'garden'
+                else if (entry[thisDay].entry) return 'select'
+            }
+            return 'write'
+        }
+        return 'login'
     }
-    return returnPageFromLocalStorage()
-  }
-
-  function updateUserId(uId) {
-    //checkPreviousEntry(uId)
-    setUserId(uId)
-  }
-
-  function goNextPage(page) {
-    setPage(page)
-  }
-
-  if (page === 'login') return <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />
-  if (page === 'register') return <Register goNextPage={goNextPage} updateUserId={updateUserId} />
-  if (page === 'write') return <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />
-  if (page === 'select') return <SelectPlant goNextPage={goNextPage} />
-  if (page === 'garden') return <Garden goNextPage={goNextPage} db={db} />
-  if (page === 'see') return <SeeEntry goNextPage={goNextPage} />
-  return <Loading />
+    if (page == null) return <Loading />
+    if (page === 'login') return <SplashPage goNextPage={goNextPage} updateUserId={updateUserId} />
+    if (page === 'register') return <Register goNextPage={goNextPage} updateUserId={updateUserId} />
+    if (page === 'write') return <WriteEntry goNextPage={goNextPage} userId={userId} promptNumber={Math.floor(Math.random() * 7)} />
+    if (page === 'select') return <SelectPlant goNextPage={goNextPage} />
+    if (page === 'garden') return <Garden goNextPage={goNextPage} db={db} />
+    if (page === 'see') return <SeeEntry goNextPage={goNextPage} />
 
 }
-
-export default App;
+export default App

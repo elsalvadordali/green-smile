@@ -24,6 +24,8 @@ const Garden = ({ db }) => {
   const [month, setMonth] = useState(new Date().getMonth().toString())
   let arr = new Array(30).fill(true)
   const [showEntry, setSee] = useState(false)
+  const userId = localStorage.getItem('userId')
+
   const [ls, setLs] = useState(
     localStorage.getItem('db') ? JSON.parse(localStorage.getItem('db')) : null
   )
@@ -41,7 +43,6 @@ const Garden = ({ db }) => {
   function selectPlot(index) {
     const entry = JSON.parse(localStorage.getItem('entry'))
     if (entry && entry[TODAY].entry) {
-      const userId = localStorage.getItem('userId')
       entry[TODAY].plot = index
 
       if (db) {

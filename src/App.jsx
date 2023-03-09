@@ -45,15 +45,20 @@ function App() {
     const entry = JSON.parse(localStorage.getItem('entry'))
 
     function returnPage() {
-        console.log('owg')
+        console.log('owg', thisDay)
         if (userId) {
             if (db == undefined) return 'loading'
             if (db && db[thisYear] && db[thisYear][thisMonth] && db[thisYear][thisMonth][thisDay]) {
                 return 'garden'
             }
             if (entry) {
-                if (entry[thisDay].plant) return 'garden'
-                else if (entry[thisDay].entry) return 'select'
+                console.log('entry', entry)
+                if (entry[thisDay]) {
+                    if (entry[thisDay].plant) return 'garden'
+                    else if (entry[thisDay].entry) return 'select'
+                } else {
+                    localStorage.removeItem('entry')
+                }
             }
             return 'write'
         }
